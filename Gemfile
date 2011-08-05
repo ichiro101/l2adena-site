@@ -7,6 +7,15 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2', '~> 0.2.6'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
+
+gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

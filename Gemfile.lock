@@ -68,6 +68,7 @@ GEM
     activesupport (3.0.9)
     addressable (2.2.6)
     arel (2.0.10)
+    bcrypt-ruby (2.1.4)
     builder (2.1.2)
     capybara (1.0.0)
       mime-types (>= 1.16)
@@ -175,6 +176,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capybara
   factory_girl_rails
   guard-rspec

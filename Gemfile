@@ -16,6 +16,8 @@ end
 
 gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
 
+gem 'bcrypt-ruby'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

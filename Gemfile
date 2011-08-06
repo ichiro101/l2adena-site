@@ -10,11 +10,12 @@ gem 'mysql2', '~> 0.2.6'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'capybara'
+#  gem 'capybara'
   gem 'guard-rspec'
 end
 
-gem 'omniauth', :git => 'git://github.com/intridea/omniauth.git'
+gem 'omniauth' #, :git => 'git://github.com/intridea/omniauth.git'
+gem 'oa-openid', :require => 'omniauth/openid'
 
 gem 'bcrypt-ruby'
 

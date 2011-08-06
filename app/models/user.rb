@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   # AR relationships
   has_many :roles
+  has_many :services
 
   # Data validation
   validates_uniqueness_of :username

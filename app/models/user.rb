@@ -11,10 +11,11 @@ class User < ActiveRecord::Base
   has_many :services
 
   # Data validation
-  validates_uniqueness_of :username
-  validates_uniqueness_of :email
   validates_presence_of :password, :on => :create
   validates_presence_of :email
+  validates_presence_of :username
+  validates_uniqueness_of :username
+  validates_uniqueness_of :email
   
   # Callbacks
   before_save :encrypt_password

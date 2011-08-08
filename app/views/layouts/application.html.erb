@@ -31,7 +31,7 @@
       <nav id="nav_user">
       <ul>
         <li><%= link_to "Sign in", signin_services_path %>
-        <li><%= link_to "Register", signin_services_path %>
+        <li><%= link_to "Register", {:controller => 'services', :action => 'register'} %>
       </ul>
       </nav>
     <% end %>

@@ -15,9 +15,7 @@ class Permission
     permissions = Permission.all
 
     permissions.each do |permission|
-      if permission.symbol == symbol
-        return permission
-      end
+      return permission if permission.symbol == symbol
     end
 
     nil

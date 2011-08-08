@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:create, :signin, :signup, :newaccount, :failure]
+  before_filter :authenticate_user!, :except => [:create, :register, :signin, :signup, :newaccount, :failure]
 
   protect_from_forgery :except => :create # see https://github.com/intridea/omniauth/issues/203
 
@@ -63,7 +63,7 @@ class ServicesController < ApplicationController
           else
             # this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
             session[:authhash] = @authhash
-            render signup_services_path
+            redirect_to signup_services_path
           end
         end
       else
@@ -76,6 +76,10 @@ class ServicesController < ApplicationController
     end
   end
 
+  def register
+    @user = User.new
+  end
+
   def newaccount
     if params[:commit] == "Cancel"
       session[:authhash] = nil
@@ -83,11 +87,12 @@ class ServicesController < ApplicationController
       redirect_to root_url
     else  # create account
       @newuser = User.new
-      @newuser.username = session[:authhash][:name]
-      @newuser.email = session[:authhash][:email]
-      @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
+      @newuser.username = params[:user][:username]
+      @newuser.email = params[:user][:email]
+      @newuser.password = ActiveSupport::SecureRandom.hex(30)
 
-      if @newuser.save!
+      if @newuser.save
+        @newuser.services.create!(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
         # signin existing user
         # in the session his user id and the service id used for signing in is stored
         session[:user_id] = @newuser.id
@@ -96,8 +101,8 @@ class ServicesController < ApplicationController
         flash[:notice] = 'Your account has been created and you have been signed in!'
         redirect_to root_url
       else
-        flash[:error] = 'This is embarrassing! There was an error while creating your account from which we were not able to recover.'
-        redirect_to root_url
+        @authhash = session[:authhash]
+        render('signup')
       end  
     end
   end
@@ -113,6 +118,13 @@ class ServicesController < ApplicationController
     end
 
     redirect_to services_path
+  end
+
+  def signup
+    @newuser = User.new
+    @authhash = session[:authhash]
+    @newuser.username = @authhash[:name]
+    @newuser.email = @authhash[:email]
   end
 
   def signout

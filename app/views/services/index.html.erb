@@ -4,6 +4,12 @@
 
 <h2>You can use these accounts to sign in</h2>
 
+<% if @services.size == 0 %>
+  <p>You currently do not have a facebook or google account connected
+  with this L2Adena account. To add an association, please click on the links below to connect
+  your accounts.</p>
+<% end %>
+
 <% @services.each do |service| %>  
   <div class="service_in_use round">  
     <div class="service_img">

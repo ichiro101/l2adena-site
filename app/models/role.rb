@@ -36,7 +36,7 @@ class Role
       end
     end
 
-    nil
+    raise StandardError, "Role not found"
   end
 
   def self.find_by_symbol(symbol)
@@ -48,15 +48,13 @@ class Role
       end
     end
 
-    nil
+    raise StandardError, "Role not found"
   end
 
   def assign_permission(symbol)
     permission = Permission.find_by_symbol(symbol)
 
-    if permission == nil
-      return nil
-    end
+    raise StandardError, "Permission does not exist" if permission == nil
 
     permission_roles = PermissionRole.where(:permission_id => permission.id, :role_id => self.id)
 
@@ -67,6 +65,8 @@ class Role
       return permission_role.save
     end
 
+    # If we are here then
+    # permission role is found, then we simply ignore it and return true
     true
   end
 

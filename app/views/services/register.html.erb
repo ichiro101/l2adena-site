@@ -1,0 +1,43 @@
+<section id="services_signin" class="services">
+    <h1>Register a New Account</h1>
+
+    <p>
+    You can sign up or sign in using one of your existing accounts at Facebook, Google, and other OpenID services. Please select the provider you want to use:
+    </p>
+
+    <div>
+        <%= render "/services/services_list" %>
+    </div>
+    
+    <p class="clear">
+    Don't have any of these accounts? Get your <%= link_to "MyOpenID", "http://www.myopenid.com/" %> or <%= link_to "GoogleID", "http://mail.google.com/mail/signup" %> now! If you want to learn more about OpenID or find more OpenID providers, you can get more information at <%= link_to "openid.net", "http://openid.net" %>.<br />
+
+    Additionally, you may create an account with us using the old fashioned way.<br />
+    </p>
+
+    <h2>Registration Form</h2>
+    <% if @user.errors.any? %>
+      <%= error_messages_for(@user) %>
+    <% end %>
+    <%= form_for(@user, :url => {:controller => 'accounts', :action => 'register'}) do |f| %>
+      <table>
+        <tr>
+          <td><%= f.label :username %></td>
+          <td><%= f.text_field :username %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :password %></td>
+          <td><%= f.password_field :password %></td>
+        </tr>
+        <tr>
+          <td><%= label_tag :show_password %></td>
+          <td><%= check_box_tag(:show_password) %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :email %></td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+      </table>
+      <%= f.submit :Register, :value => "Register a New Account" %>
+    <% end %>
+</section>

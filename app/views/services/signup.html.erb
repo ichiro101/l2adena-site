@@ -2,29 +2,48 @@
     <h1>New account</h1>
 
     <div>
-        <h3>This authentication is new to Omniauth pure</h3>
+        <h3>This authentication is new to L2Adena</h3>
         
         <p class="small">
             Provider: <%= @authhash[:provider] %><br />
             ID: <%= @authhash[:uid] %><br />
-            Name: <%= @authhash[:name] %><br />
-            Email: <%= @authhash[:email] %> <br />
         </p>
 
-        <%= form_tag :controller => "services", :action => "newaccount" do %>
-            <%= submit_tag "Confirm and create new account" %> <%= submit_tag "Cancel" %>
+        <%= form_for(@newuser, :url => { :controller => "services", :action => "newaccount"}) do |f| %>
+          <p>Please select the username and email you would like to use for your L2Adena account.
+          Email addresses are kept for the sole purposes of password resets and receiving
+          private messages from other players (which you may opt out), L2Adena staff will not be
+          able to help you with password reset should you not have access to your email
+          when you lost access to your account. L2Adena will not be sharing
+          your email address to a third party nor we will send any advertisements to your email.
+          Your email address is only seen by you, and will not be public.</p>
+
+          <% if @newuser.errors.any? %>
+            <%= error_messages_for(@newuser) %>
+          <% end %>
+          <table>
+            <tr>
+              <td><%= f.label :username %></td>
+              <td><%= f.text_field :username %></td>
+            </tr>
+            <tr>
+              <td><%= f.label :email %></td>
+              <td><%= f.text_field :email %></td>
+            </tr>
+          </table>
+          <%= submit_tag "Confirm and create new account" %> <%= submit_tag "Cancel" %>
         <% end %>
     </div>
 
     <p>
-    If you think you already have an Omniauth pure account, and you were just trying to associate a new authentication with your existing account, then you’re in the wrong place. You’re not logged into Omniauth pure right now.
+    If you think you already have a L2Adena account, and you were just trying to associate a new authentication with your existing account, then you’re in the wrong place. You’re not logged into L2Adena right now.
     </p>
 
     <p class="small nomargin">
-        If you have a Omniauth pure account, and you’d like to associate another authentication with it, here’s what to do:
+        If you have a L2Adena account, and you’d like to associate another authentication with it, here’s what to do:
     </p>
     <ul class="small">
-        <li>Log in in to Omniauth pure with your existing authentication service TODO</li>
+        <li>Log in in to L2Adena with your existing authentication service</li>
         <li>Go to your settings page (located at the top/right corner of the page)
         <li>Add one or more accounts to be used to sign-in</li>
     </ul>

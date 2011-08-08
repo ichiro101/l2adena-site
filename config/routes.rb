@@ -11,10 +11,14 @@ L2adena::Application.routes.draw do
       get 'signin'
       get 'signout'
       get 'signup'
+      get 'register'
       post 'newaccount'
       get 'failure'
     end
   end
+
+  match '/accounts/:action' => 'accounts'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

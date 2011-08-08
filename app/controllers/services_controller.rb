@@ -9,7 +9,7 @@ class ServicesController < ApplicationController
   end
 
   # callback :success
-  # This handles singing in and adding an authentication service to existing accoutns itself
+  # This handles singing in and adding an authentication service to existing accounts itself
   # it renders a separate view if there is a new user to create
   def create
 

@@ -31,7 +31,7 @@
         </tr>
         <tr>
           <td><%= label_tag :show_password %></td>
-          <td><%= check_box_tag(:show_password) %></td>
+          <td><%= check_box_tag(:show_password, '', false, {:onchange => 'showPassword();'}) %></td>
         </tr>
         <tr>
           <td><%= f.label :email %></td>
@@ -41,3 +41,15 @@
       <%= f.submit :Register, :value => "Register a New Account" %>
     <% end %>
 </section>
+<script type="text/javascript">
+  function showPassword() {
+    var checkBox = document.getElementById('show_password');
+    var passwordField = document.getElementById('user_password');
+
+    if(checkBox.checked == true) {
+      passwordField.type = 'text';
+    } else {
+      passwordField.type = 'password';
+    }
+  }
+</script>

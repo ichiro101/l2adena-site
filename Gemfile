@@ -17,6 +17,8 @@ end
 gem 'omniauth' #, :git => 'git://github.com/intridea/omniauth.git'
 gem 'oa-openid', :require => 'omniauth/openid'
 
+gem 'gravatar-ultimate'
+
 gem 'bcrypt-ruby'
 
 # Use unicorn as the web server

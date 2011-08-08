@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     role = Role.find_by_symbol(symbol)
 
     if role == nil
-      return nil
+      raise StandardError, "Role not found"
     end
 
     user_roles = UserRole.where(:user_id => self.id, :role_id => role.id)
@@ -39,9 +39,30 @@ class User < ActiveRecord::Base
     user_role.save
   end
 
+  # Unassign role
+  def unassign_role(symbol)
+    if self.has_role?(:owner)
+      raise Exceptions::AccessDenied
+    end
+
+    role = Role.find_by_symbol(symbol)
+
+    if role == nil
+      raise StandardError, "Role not found"
+    end
+
+    user_roles = UserRole.where(:user_id => self.id, :role_id => role.id)
+    if user_roles.size > 0
+      user_roles.first.delete
+    end
+  end
+
   # Check if the user has the role of :symbol
   def has_role?(symbol)
     role = Role.find_by_symbol(symbol)
+      
+    raise StandardError, "Role not found" if role == nil
+
     user_roles = UserRole.where(:user_id => self.id, :role_id => role.id)
 
     if user_roles.size > 0

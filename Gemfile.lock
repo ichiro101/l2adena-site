@@ -43,6 +43,8 @@ GEM
       addressable (~> 2.2.4)
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
+    gravatar-ultimate (1.0.2)
+      sc-core-ext (>= 1.2.0)
     guard (0.5.1)
       thor (~> 0.14.6)
     guard-rspec (0.4.0)
@@ -142,6 +144,8 @@ GEM
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
+    sc-core-ext (1.2.1)
+      activesupport (>= 2.3.5)
     thor (0.14.6)
     treetop (1.4.10)
       polyglot
@@ -154,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   factory_girl_rails
+  gravatar-ultimate
   guard-rspec
   mysql2 (~> 0.2.6)
   oa-openid

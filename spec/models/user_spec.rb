@@ -34,6 +34,14 @@ describe User do
     @user.has_role?(:owner).should == true
   end
 
+  it "can be unassigned roles" do
+    @user.assign_role(:admin)
+    @user.has_role?(:admin).should == true
+
+    @user.unassign_role(:admin)
+    @user.has_role?(:admin).should == false
+  end
+
   it "assigned to owner gives automatic access to admin panel" do
     role = Role.find_by_symbol(:owner)
     @user.assign_role(:owner)

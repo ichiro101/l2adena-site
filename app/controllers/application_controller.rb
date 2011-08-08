@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
 
+  rescue_from Exceptions::AccessDenied, :with => :access_denied
+
   private
 
   def current_user
@@ -19,5 +21,10 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You need to sign in before accessing this page!"
       redirect_to signin_services_path
     end
+  end
+
+  def access_denied
+    flash[:error] = "You do not have permission to access this resource"
+    redirect_to root_url
   end
 end

@@ -5,6 +5,9 @@
 # This is the default administrator account, PLEASE CHANGE THE PASSWORD!
 user = User.new
 user.username = "admin"
+user.email = "admin@example.com"
 user.password = "password"
 
 user.save
+
+user.assign_role(:owner)

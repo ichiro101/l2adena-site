@@ -1,7 +1,5 @@
 # Handles the login and account registration the traditional way. Once
 # the user is signed in, the user will be redirected to the main page
-#
-# TODO: Actual login system
 class AccountsController < ApplicationController
 
   def signin

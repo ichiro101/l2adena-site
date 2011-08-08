@@ -6,6 +6,9 @@ L2adena::Application.routes.draw do
   match '/auth/:service/callback' => 'services#create'
   match '/auth/failure' => 'services#failure'
 
+  match '/admin/user/:action(/:id)' => 'admin/user'
+  match '/admin/:action(/:id)' => 'admin/home'
+
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'

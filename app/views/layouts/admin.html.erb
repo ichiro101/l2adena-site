@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% if @title.blank? %>
+      <title>L2adena</title>
+    <% else %>
+      <title><%= @title %></title>
+    <% end %>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+
+    <section id="flash">
+    <% flash.each do |key, value| %>
+      <div class="<%= key %>"><%= value %></div>
+    <% end %>
+    </section>
+
+    <section id="admin_nav">
+      <ul>
+        <li><%= link_to("Dashboard", {:controller => '/admin/home', :action => 'index'}) %></li>
+        <li><%= link_to("Manage Users", {:controller => '/admin/user', :action => 'index'}) %></li>
+      </ul>
+    </div>
+
+
+    <%= yield %>
+
+
+    <section id="footer">
+    <%= link_to("Return to Main Site", root_url) %><br />
+    <%= render(:partial => 'shared/footer') %>
+    </section>
+
+  </body>
+</html>

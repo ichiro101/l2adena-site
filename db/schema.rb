@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806204420) do
+ActiveRecord::Schema.define(:version => 20110808050834) do
 
   create_table "permission_roles", :force => true do |t|
     t.integer  "permission_id"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(:version => 20110806204420) do
     t.string   "uid"
     t.string   "uname"
     t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_game_accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "login"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

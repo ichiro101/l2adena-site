@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   # AR relationships
   has_many :roles
   has_many :services
+  has_many :user_game_accounts
 
   # Data validation
   validates_presence_of :password, :on => :create

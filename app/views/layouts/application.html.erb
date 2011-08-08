@@ -43,7 +43,10 @@
 
 
     <section id="footer">
-    <%= link_to("Admin Panel", {:controller => '/admin/home', :action => 'index'}) %><br />
+    <% if user_signed_in? and current_user.can_access?(:admin_panel) %>
+      <%= link_to("Admin Panel", {:controller => '/admin/home', :action => 'index'}) %><br />
+    <% end %>
+
     <%= render(:partial => 'shared/footer') %>
     </section>
 

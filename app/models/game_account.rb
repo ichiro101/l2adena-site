@@ -2,7 +2,9 @@ require 'bcrypt'
 class GameAccount < ActiveRecord::Base
   include BCrypt
 
-  has_many :user_game_accounts, :foreign_key => 'login'
+  set_primary_key :login
+
+  has_many :user_game_accounts, :primary_key => 'login', :foreign_key => 'login'
 
   establish_connection(
     :adapter => 'mysql2',

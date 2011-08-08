@@ -1,0 +1,27 @@
+<h1>Password Change for <%= @game_account.login %></h1>
+<%= form_for(@game_account, :url => {:action => 'update', :id => @game_account.login}) do |f| %>
+<table>
+  <tr>
+    <td><%= f.label :plain_password, "Password" %></td>
+    <td><%= f.password_field :plain_password %></td>
+  </tr>
+  <tr>
+    <td><%= label_tag :show_password %></td>
+    <td><%= check_box_tag :show_password, "", false, {:onchange => 'showPassword();'} %></td>
+  </tr>
+</table>
+  <%= f.submit "Change Password" %>
+<% end %>
+<script type="text/javascript">
+  function showPassword() {
+    var checkBox = document.getElementById("show_password");
+    var field = document.getElementById("game_account_plain_password");
+
+    if(checkBox.checked) {
+      field.type = "text";
+    } else {
+      field.type = "password";
+    }
+  }
+</script>
+

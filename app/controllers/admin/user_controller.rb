@@ -5,7 +5,7 @@ class Admin::UserController < Admin::AdminController
   end
 
   def show
-    @user = User.find(params[:user])
+    @user = User.find(params[:id])
   end
 
 end

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808050834) do
+ActiveRecord::Schema.define(:version => 20110808060627) do
+
+  create_table "game_servers", :force => true do |t|
+    t.string   "name"
+    t.string   "gameserver_hostname"
+    t.string   "gameserver_port"
+    t.string   "gameserver_database_hostname"
+    t.string   "gameserver_database_port"
+    t.string   "gameserver_database_username"
+    t.string   "gameserver_database_password"
+    t.string   "gameserver_database_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permission_roles", :force => true do |t|
     t.integer  "permission_id"

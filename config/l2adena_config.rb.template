@@ -1,0 +1,31 @@
+# IMPORTANT!
+# 
+# Rename this file to l2adena_config.rb AND CHANGE THESE VALUES
+L2adena::Application.configure do
+
+  # The host or ip address of your login server, this is used
+  # to check the login server status
+  config.login_server_host = 'adena.otakukingdom.com'
+
+  # The port of your login server, this is used to check the login
+  # server status (leave it alone if you are using the default login server port)
+  config.login_server_port = 2106
+
+  # The host of the database of your login server database
+  config.login_server_database_host = 'adena.otakukingdom.com'
+
+  # The port number of the database of your login server database
+  # (leave it alone if your mysql database resides on the default
+  # port)
+  config.login_server_database_port = 3306
+
+  # The username of the database of your login server database
+  config.login_server_database_username = 'Izumi_Konata'
+
+  # The password of the database of your login server database
+  config.login_server_database_password = 'awesome=true'
+
+  # The database name of your login server
+  config.login_server_database_name = 'lucky_database'
+
+end

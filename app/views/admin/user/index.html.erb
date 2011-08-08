@@ -10,6 +10,9 @@
 
   <% @users.each do |user| %>
     <tr>
+      <td><%= image_tag(Gravatar.new(user.email).image_url) %></td>
+      <td><%= user.username %></td>
+      <td><%= link_to("Show", {:action => 'show', :id => user.id }) %></td>
     </tr>
   <% end %>
 </table>

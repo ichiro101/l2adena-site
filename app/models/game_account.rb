@@ -10,5 +10,6 @@ class GameAccount < ActiveRecord::Base
     :database => Rails.configuration.login_server_database_name
   )
 
+  # Assuming we still follow l2j table name conventions
   set_table_name 'accounts'
 end

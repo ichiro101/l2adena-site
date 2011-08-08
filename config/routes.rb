@@ -1,5 +1,7 @@
 L2adena::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
   match '/signin' => 'services#signin'
   match '/signout' => 'services#signout'
 

@@ -1,4 +1,6 @@
 class GameAccount < ActiveRecord::Base
+  set_primary_key :login
+
   has_many :user_game_accounts, :foreign_key => 'login'
 
   establish_connection(

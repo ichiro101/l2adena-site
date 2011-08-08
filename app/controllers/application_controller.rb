@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
 
   rescue_from Exceptions::AccessDenied, :with => :access_denied
 
+  def can_access_admin_panel
+    authenticate_user!
+
+    if current_user.can_access?(:admin_panel)
+      return true
+    else
+      raise Exceptions::AccessDenied
+    end
+  end
+
   private
 
   def current_user
@@ -27,4 +37,5 @@ class ApplicationController < ActionController::Base
     flash[:error] = "You do not have permission to access this resource"
     redirect_to root_url
   end
+
 end

@@ -7,6 +7,8 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2', '~> 0.2.6'
 
+gem 'activeadmin'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

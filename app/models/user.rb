@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'digest/sha1'
 
 class User < ActiveRecord::Base
   include BCrypt
@@ -113,5 +114,6 @@ class User < ActiveRecord::Base
       self.hashed_password = encrypted
     end
   end
+
 
 end

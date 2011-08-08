@@ -1,0 +1,24 @@
+<%= render(:partial => 'submenu') %>
+<h1>Ingame Accounts</h1>
+
+<% if @user_game_accounts.size == 0 %>
+  <p>You currently do not have an ingame account, to create one, please click "Create a Game Account"
+  link.</p>
+<% else %>
+  <% @user_game_accounts.each do |user_game_account| %>
+    <div class="game-account">
+      <table>
+        <tr>
+          <th>Login</th>
+          <td><%= user_game_account.login %></td>
+        </tr>
+        <tr>
+          <th>Action</th>
+          <td><%= link_to("View Account Details", {:action => 'show', :id => user_game_account.login}) %>
+          <%= link_to("Change Password", {:action => 'edit', :id => user_game_account.login}) %></td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
+<% end %>
+

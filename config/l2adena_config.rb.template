@@ -28,4 +28,13 @@ L2adena::Application.configure do
   # The database name of your login server
   config.login_server_database_name = 'lucky_database'
 
+  # Use BCrypt instead of l2j's default password hashing scheme?
+  # The L2J's default password hashing is NOT secure, for details please see
+  # http://codahale.com/how-to-safely-store-a-password/
+  # Hence we strongly recommend the use of BCrypt as an alterative hashing scheme
+  #
+  # To have L2J use BCrypt simply apply the following patch, you must also edit the password column to
+  # support the larger number of characters needed in the accounts table
+  # https://github.com/Bigcheese/l2adena-l2j-core/commit/a9c0b768b6e40e3a4624f5de49d2e40a9a550436
+  config.use_bcrypt = false
 end

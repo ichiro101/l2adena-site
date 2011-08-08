@@ -1,5 +1,7 @@
 L2adena::Application.routes.draw do
 
+  match '/game/:action/(/:id)' => 'game_accounts'
+
   match '/signin' => 'services#signin'
   match '/signout' => 'services#signout'
 

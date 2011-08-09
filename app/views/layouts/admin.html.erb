@@ -6,7 +6,10 @@
     <% else %>
       <title><%= @title %></title>
     <% end %>
-    <%= stylesheet_link_tag :all %>
+    <%= stylesheet_link_tag 'screen' %>
+    <!--[if lt IE 8]>
+  <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
   </head>

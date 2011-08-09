@@ -17,6 +17,14 @@ describe User do
     authenticated_user.class.should == User
   end
 
+  it "cannot be created with an invalid email address" do
+    user = User.new
+    user.username = "user1"
+    user.password = "user123"
+    user.email = "asdbadfna"
+    user.save.should == false
+  end
+
   it "cannot be authenticated if password is wrong" do
     authenticated_user = User.authenticate("user", "wrongpassword")
     authenticated_user.should == nil

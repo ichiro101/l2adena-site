@@ -12,7 +12,7 @@
     <%= javascript_include_tag :defaults %>
     <%= csrf_meta_tag %>
     <style type="text/css">
-      div ul {
+      ul {
         list-style:none;
       }
 
@@ -45,15 +45,15 @@
     <% if user_signed_in? %>
       <nav>
       <ul>
-        <div id="gravitar" class="box left"><span class="span-1"><%= image_tag(Gravatar.new(current_user.email).image_url) %></span>
-          <p class="span-5">Logged in as <%= current_user.username %><br />
-          <span class="quiet"><%= current_user.email %></span></p></div>
         <li class="left"><%= link_to "Home Page", root_url %></li>
         <li class="left"><%= link_to "Authentication Settings", services_path %></li>
         <li class="left"><%= link_to "Game Menu", {:controller => 'game_accounts', :action => 'index'} %></li>
         <li class="left"><%= link_to "Sign out", signout_services_path %></li>
       </ul>
       </nav>
+        <div id="gravitar" class="box right"><span class="span-1"><%= image_tag(Gravatar.new(current_user.email).image_url) %></span>
+        <p class="span-5">Logged in as <%= current_user.username %><br />
+        <span class="quiet"><%= current_user.email %></span></p></div>
     <% else %>
       <nav>
       <ul>
@@ -74,6 +74,7 @@
     <%= yield %>
 
     <div class="clear"></div>
+    <hr />
     <div id="footer" class="span-24">
     <% if user_signed_in? and current_user.can_access?(:admin_panel) %>
       <%= link_to("Admin Panel", {:controller => '/admin/home', :action => 'index'}) %><br />

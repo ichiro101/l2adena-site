@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   validates_presence_of :username
   validates_uniqueness_of :username
   validates_uniqueness_of :email
+  validate :email_integrity
   
   # Callbacks
   before_save :encrypt_password
@@ -112,6 +113,12 @@ class User < ActiveRecord::Base
     unless password.blank?
       encrypted = Password.create(self.password, :cost => 12)
       self.hashed_password = encrypted
+    end
+  end
+
+  def email_integrity
+    unless self.email =~ /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/
+      errors.add(:email, "is not valid")
     end
   end
 

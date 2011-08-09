@@ -36,7 +36,7 @@
       <nav>
       <ul>
         <div id="gravitar" class="box left"><span class="span-1"><%= image_tag(Gravatar.new(current_user.email).image_url) %></span>
-          <p class="span-4">Logged in as <%= current_user.username %><br />
+          <p class="span-5">Logged in as <%= current_user.username %><br />
           <span class="quiet"><%= current_user.email %></span></p></div>
         <li class="left span-5"><%= link_to "Authentication Settings", services_path %>
         <li class="left span-3"><%= link_to "Game Menu", {:controller => 'game_accounts', :action => 'index'} %>

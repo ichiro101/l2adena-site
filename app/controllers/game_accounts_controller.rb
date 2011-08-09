@@ -22,7 +22,7 @@ class GameAccountsController < ApplicationController
       user_game_account.login = @game_account.login
       user_game_account.save
 
-      flash[:notice] = "Your ingame account has been created"
+      flash[:success] = "Your ingame account has been created"
       redirect_to(:action => 'index')
     else
       render('new')

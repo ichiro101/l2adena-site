@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
 
     if user
       session[:user_id] = user.id
-      flash[:notice] = "You have been signed in"
+      flash[:success] = "You have been signed in"
       redirect_to root_url
     else
       flash[:error] = "Invalid username/password combination"
@@ -26,7 +26,7 @@ class AccountsController < ApplicationController
     
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Your account has been created and you have been signed in"
+      flash[:success] = "Your account has been created and you have been signed in"
       redirect_to root_url
     else
       render register_services_path

@@ -38,13 +38,13 @@
         text-decoration:none;
       }
 
-      div#status {
-        padding-top:5px;
-        padding-bottom:10px;
-      }
-
       .online {
         color:#4A69A2;
+      }
+
+      div#status {
+        margin-top:30px;
+        background-color:#FFF8F3;
       }
 
       .offline {
@@ -78,10 +78,6 @@
       <% end %>
       </div>
 
-      <div id="status" class="span-6">
-        <%= server_status %>
-      </div>
-
       <div class="clear"></div>
 
       <section id="flash" class="span-24">
@@ -92,7 +88,10 @@
 
     <%= yield %>
 
-    <div class="clear"></div>
+    <div id="status" class="box span-23">
+    <h4>Server Status</h4>
+      <%= server_status %>
+    </div>
     <hr />
     <div id="footer" class="span-24">
     <% if user_signed_in? and current_user.can_access?(:admin_panel) %>

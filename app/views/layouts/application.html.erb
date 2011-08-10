@@ -76,6 +76,10 @@
       </ul>
       </nav>
       <% end %>
+    <div id="status" class="box span-23">
+    <h4>Server Status</h4>
+      <%= server_status %>
+    </div>
       </div>
 
       <div class="clear"></div>
@@ -88,10 +92,6 @@
 
     <%= yield %>
 
-    <div id="status" class="box span-23">
-    <h4>Server Status</h4>
-      <%= server_status %>
-    </div>
     <hr />
     <div id="footer" class="span-24">
     <% if user_signed_in? and current_user.can_access?(:admin_panel) %>

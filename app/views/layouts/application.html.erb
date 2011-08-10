@@ -37,6 +37,19 @@
       div#menu a {
         text-decoration:none;
       }
+
+      div#status {
+        padding-top:5px;
+        padding-bottom:10px;
+      }
+
+      .online {
+        color:#4A69A2;
+      }
+
+      .offline {
+        color:#5C4BA2;
+      }
     </style>
   </head>
   <body>
@@ -54,7 +67,7 @@
         <div id="gravitar" class="box right"><span class="span-1"><%= image_tag(Gravatar.new(current_user.email).image_url) %></span>
         <p class="span-5">Logged in as <%= current_user.username %><br />
         <span class="quiet"><%= current_user.email %></span></p></div>
-    <% else %>
+      <% else %>
       <nav>
       <ul>
         <li class="left"><%= link_to "Home Page", root_url %></li>
@@ -64,6 +77,12 @@
       </nav>
       <% end %>
       </div>
+
+      <div id="status" class="span-6">
+        <%= server_status %>
+      </div>
+
+      <div class="clear"></div>
 
       <section id="flash" class="span-24">
       <% flash.each do |key, value| %>

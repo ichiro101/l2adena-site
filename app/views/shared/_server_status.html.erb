@@ -1,0 +1,5 @@
+<% status_list.each do |status| %>
+  <div class="status left">
+  <%= status.name %>: <%= raw(status.status_string) %>
+  </div>
+<% end %>

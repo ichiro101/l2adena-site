@@ -70,6 +70,7 @@ div#side-menu {
   box-shadow: 2px 2px 5px 1px #000000;
   position:relative;
   top:30px;
+  margin-right:0;
 }
 
 div#side-menu ul {
@@ -77,9 +78,26 @@ div#side-menu ul {
   padding:10px;
 }
 
+div#side-menu ul li {
+  padding-top:7px;
+  padding-bottom:7px;
+  width:160px;
+  margin-top:5px;
+  margin-left:5px;
+  background-color:#FFECF6;
+  box-shadow: 2px 2px 5px 1px #000000;
+}
+
+div#side-menu ul li a {
+  text-decoration:none;
+  margin-left:5px;
+}
+
 div#page-content {
+  margin-left:0;
+  margin-right:0;
   background-color:#fff;
-  padding:10px;
+  padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
 }
 

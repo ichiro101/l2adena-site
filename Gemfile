@@ -23,6 +23,8 @@ gem 'will_paginate', '~> 3.0'
 
 gem 'jquery-rails', '>= 1.0.12'
 
+gem 'jammit'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

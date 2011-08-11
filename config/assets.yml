@@ -2,10 +2,12 @@ package_assets: always
 
 javascripts:
   default_javascripts:
-    - public/javascripts/*.js
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery_ujs.js
+    - public/javascripts/application.js
+    - public/javascripts/modernizr.js
 
 stylesheets:
   common:
     - public/stylesheets/screen.css
     - public/stylesheets/custom.css
-

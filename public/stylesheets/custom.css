@@ -50,6 +50,10 @@ div#middle {
   top:40px;
 }
 
+div#flash {
+  margin-top:10px;
+}
+
 /** SIDE MENU */
 div#side-menu {
   background-color:#fff;

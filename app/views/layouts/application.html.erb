@@ -39,6 +39,16 @@
       </div>
     </div>
 
+    <div class="clear"></div>
+
+  <% if flash.any? %>
+    <div id="flash" class="span-24">
+      <% flash.each do |key, value| %>
+          <div class="<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+  <% end %>
+
     <div id="middle">
       <div id="side-menu" class="span-4">
         <ul>

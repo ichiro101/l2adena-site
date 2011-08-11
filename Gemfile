@@ -14,12 +14,13 @@ group :development, :test do
   gem 'guard-rspec'
 end
 
+gem 'bcrypt-ruby'
 gem 'omniauth' #, :git => 'git://github.com/intridea/omniauth.git'
 gem 'oa-openid', :require => 'omniauth/openid'
 
 gem 'gravatar-ultimate'
 
-gem 'bcrypt-ruby'
+gem 'jquery-rails', '>= 1.0.12'
 
 # Use unicorn as the web server
 # gem 'unicorn'

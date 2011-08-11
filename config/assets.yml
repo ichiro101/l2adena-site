@@ -1,0 +1,11 @@
+package_assets: always
+
+javascripts:
+  default_javascripts:
+    - public/javascripts/*.js
+
+stylesheets:
+  common:
+    - public/stylesheets/screen.css
+    - public/stylesheets/custom.css
+

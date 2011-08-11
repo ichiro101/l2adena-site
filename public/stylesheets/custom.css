@@ -35,7 +35,11 @@ div#server-status div.status {
 }
 
 div#server-status .online {
-  color:#4E6C19;
+  color:#52E93A;
+}
+
+div#server-status .offline {
+  color:#FF4E40;
 }
 
 div#badge {

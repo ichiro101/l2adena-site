@@ -18,8 +18,6 @@ div#logo {
   position: relative;
   background-color:#fff;
   margin:0;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
 }
@@ -27,8 +25,6 @@ div#logo {
 div#server-status {
   position: relative;
   background-color:#fff;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 2;
 }
@@ -50,8 +46,6 @@ div#badge {
   position: relative;
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   padding:10px;
   z-index: 1;
 }
@@ -72,8 +66,6 @@ div#new-user {
   margin-top:10px;
   margin-bottom:0;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
 }
 
 div#middle {
@@ -93,8 +85,6 @@ div#dismiss {
 div#side-menu {
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   position:relative;
   top:30px;
   margin-right:0;
@@ -128,8 +118,6 @@ div#page-content {
   background-color:#fff;
   padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
 }
 
@@ -147,8 +135,6 @@ div#right-links {
   padding:10px;
   top:30px;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 1;
 }
 
@@ -158,8 +144,6 @@ div#footer-content {
   position:relative;
   padding:10px;
   box-shadow: 2px 2px 5px 1px #000000;
-  -moz-box-shadow: 2px 2px 5px 1px #000000;
-  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   top:80px;
 }
 

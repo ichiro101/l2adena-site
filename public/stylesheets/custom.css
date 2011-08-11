@@ -5,15 +5,17 @@ body {
 }
 
 /** HEADERS **/
-div#logo img {
+div#logo {
   background-color:#fff;
   margin:0;
   box-shadow: 2px 2px 5px 1px #000000;
+  z-index: 0;
 }
 
 div#server-status {
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
+  z-index: -1;
 }
 
 div#server-status div.status {
@@ -25,6 +27,7 @@ div#badge {
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
   padding:10px;
+  z-index: -2;
 }
 
 div#badge img {

@@ -1,4 +1,4 @@
-<div class="span-18">
+<%= render(:partial => 'submenu') %>
 <h1>Ingame Accounts</h1>
 
 <% if @user_game_accounts.size == 0 %>
@@ -13,8 +13,3 @@
     </div>
   <% end %>
 <% end %>
-</div>
-
-<div class="span-6 last">
-<%= render(:partial => 'submenu') %>
-</div>

@@ -1,4 +1,4 @@
-<div class="span-18">
+<%= render(:partial => 'submenu') %>
 <h1>Create a Ingame Account</h1>
 <% if @game_account.errors.any? %>
   <%= error_messages_for(@game_account) %>
@@ -20,7 +20,6 @@
 </table>
   <%= f.submit "Register Ingame Account" %>
 <% end %>
-</div>
 <script type="text/javascript">
   function showPassword() {
     var checkBox = document.getElementById("show_password");
@@ -33,6 +32,3 @@
     }
   }
 </script>
-<div class="span-6 last">
-<%= render(:partial => 'submenu') %>
-</div>

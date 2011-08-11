@@ -89,12 +89,14 @@ div#side-menu ul li {
 }
 
 div#side-menu ul li a {
+  position: relative;
   text-decoration:none;
   margin-left:5px;
   z-order: 2;
 }
 
 div#page-content {
+  position: relative;
   margin-left:0;
   margin-right:0;
   background-color:#fff;
@@ -108,6 +110,7 @@ div#page-content ul {
 }
 
 div#right-links {
+  position: relative;
   background-color:#fff;
   position:relative;
   padding:10px;

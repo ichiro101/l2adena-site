@@ -49,10 +49,17 @@
     </div>
   <% end %>
 
+  <% unless session[:hide_newbie_bar] %>
+    <%= render(:partial => 'shared/new_user') %>
+  <% end %>
+
     <div id="middle">
       <div id="side-menu" class="span-4">
         <ul>
           <li><%= link_to("Game Control Panel", :controller => 'game_accounts') %></li>
+          <% if session[:hide_newbie_bar] %>
+            <li><%= link_to("Connection Info", undismiss_newbie_bar_users_path) %></li>
+          <% end %>
         </ul>
       </div>
 
@@ -68,8 +75,11 @@
   </div>
 
   <div id="footer" class="container">
+    <% if current_user and current_user.can_access?(:admin_panel) %>
+      <%= link_to("Administrator Panel", {:controller => '/admin/home'}) %><br />
+    <% end %>
     &copy; 2011 L2Adena.<br />
-    Source code of this site is avaliable @ <%= link_to("github", "https://github.com/ichiro101/l2adena-site") %>
+    Source code of this site is avaliable @ <%= link_to("github", "https://github.com/ichiro101/l2adena-site", :target => '_blank') %>
   </div>
   </body>
 </html>

@@ -91,6 +91,7 @@ div#side-menu ul li {
 div#side-menu ul li a {
   text-decoration:none;
   margin-left:5px;
+  z-order: 2;
 }
 
 div#page-content {
@@ -99,6 +100,7 @@ div#page-content {
   background-color:#fff;
   padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
+  z-order: 3;
 }
 
 div#page-content ul {
@@ -111,6 +113,7 @@ div#right-links {
   padding:10px;
   top:30px;
   box-shadow: 2px 2px 5px 1px #000000;
+  z-order: 1;
 }
 
 /** FOOTER */

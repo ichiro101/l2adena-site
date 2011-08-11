@@ -117,6 +117,10 @@ div#page-content {
   z-index: 3;
 }
 
+div#page-content .box {
+  background-color:#FFF5FA;
+}
+
 div#page-content ul {
   list-style:none;
 }
@@ -137,4 +141,8 @@ div#footer-content {
   padding:10px;
   box-shadow: 2px 2px 5px 1px #000000;
   top:80px;
+}
+
+div#footer-content span.right {
+  text-align:right;
 }

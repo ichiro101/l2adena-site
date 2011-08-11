@@ -71,7 +71,7 @@ div#side-menu {
   position:relative;
   top:30px;
   margin-right:0;
-  z-order: 2;
+  z-index: 2;
 }
 
 div#side-menu ul {
@@ -101,7 +101,7 @@ div#page-content {
   background-color:#fff;
   padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
-  z-order: 3;
+  z-index: 3;
 }
 
 div#page-content ul {
@@ -114,7 +114,7 @@ div#right-links {
   padding:10px;
   top:30px;
   box-shadow: 2px 2px 5px 1px #000000;
-  z-order: 1;
+  z-index: 1;
 }
 
 /** FOOTER */

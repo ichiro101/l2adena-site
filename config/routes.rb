@@ -25,6 +25,7 @@ L2adena::Application.routes.draw do
   resources :users, :only => [:index] do
     collection do
       get 'dismiss_newbie_bar'
+      get 'undismiss_newbie_bar'
     end
   end
 

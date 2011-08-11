@@ -6,7 +6,11 @@ body {
 }
 
 a {
-  color:#86A64D;
+ color:#5F163C ;
+}
+
+a:hover {
+  color:#4E6C19;
 }
 
 /** HEADERS **/
@@ -91,7 +95,7 @@ div#side-menu ul li {
   margin-top:5px;
   margin-left:5px;
   background-color:#FFECF6;
-  box-shadow: 2px 2px 5px 1px #000000;
+  border:1px solid #A64D7C;
 }
 
 div#side-menu ul li a {

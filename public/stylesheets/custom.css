@@ -34,6 +34,10 @@ div#server-status div.status {
   left:10px;
 }
 
+div#server-status .online {
+  color:#4E6C19;
+}
+
 div#badge {
   position: relative;
   background-color:#fff;

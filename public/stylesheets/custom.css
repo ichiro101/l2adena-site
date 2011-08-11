@@ -45,6 +45,12 @@ span#badge-text {
 
 /** HEADER SECTION END HERE */
 /** START OF THE MIDDLE SECTION */
+div#new-user {
+  margin-top:10px;
+  margin-bottom:0;
+  box-shadow: 2px 2px 5px 1px #000000;
+}
+
 div#middle {
   position:relative;
   top:40px;
@@ -52,6 +58,10 @@ div#middle {
 
 div#flash {
   margin-top:10px;
+}
+
+div#dismiss {
+  float:right;
 }
 
 /** SIDE MENU */

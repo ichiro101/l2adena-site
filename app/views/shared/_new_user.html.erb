@@ -1,0 +1,36 @@
+<div id="new-user" class="box span-23">
+  <div class="span-8">
+    <h4>Step 1. Download the Client</h4>
+    To get started playing Lineage 2 on L2Adena,
+    you must first download the 
+    <%= link_to("Lineage 2 client", "http://www.gamershell.com/download_69500.shtml") %>.<br />
+    After downloading the client, please install the client and update the Lineage 2
+    client. 
+  </div>
+
+  <div class="span-8">
+    <h4>Step 2. Edit Host File</h4>
+    Open up notepad (or your favorite text editor)
+    in Administrator Mode (if you are on Windows 7/Vista)
+    Open the file <code>C:\Windows\system32\drivers\etc\host</code>, where
+    <code>C:\Windows</code> is your Windows installation folder, 
+    and add the following line:<br />
+    <code>208.43.9.72 L2authd.lineage2.com</code><br />
+    Once your done, save it and your client is ready to connect
+    to Lineage 2.
+  </div>
+
+  <div id="dismiss" class="right">
+    [<%= link_to("dismiss", dismiss_newbie_bar_users_path) %>]
+  </div>
+
+  <p class="span-7 last">
+    <h4>Step 3. Register an Account</h4>
+    To play Lineage 2 on L2Adena, you must register
+    an ingame account with us. To do so, you must go
+    to the Game Control Panel, and click "Create Account".
+    Enter your username and password for your ingame account
+    and your set.
+  </p>
+
+</div>

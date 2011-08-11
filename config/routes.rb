@@ -21,6 +21,12 @@ L2adena::Application.routes.draw do
       get 'failure'
     end
   end
+  
+  resources :users, :only => [:index] do
+    collection do
+      get 'dismiss_newbie_bar'
+    end
+  end
 
   match '/accounts/:action' => 'accounts'
 

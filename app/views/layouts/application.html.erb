@@ -75,11 +75,13 @@
   </div>
 
   <div id="footer" class="container">
+    <div id="footer-content">
     <% if current_user and current_user.can_access?(:admin_panel) %>
       <%= link_to("Administrator Panel", {:controller => '/admin/home'}) %><br />
     <% end %>
     &copy; 2011 L2Adena.<br />
     Source code of this site is avaliable @ <%= link_to("github", "https://github.com/ichiro101/l2adena-site", :target => '_blank') %>
+    </div>
   </div>
   </body>
 </html>

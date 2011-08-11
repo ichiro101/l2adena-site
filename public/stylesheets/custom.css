@@ -1,7 +1,12 @@
+/** Stuff that affects the entire page */
 body {
   background-image:url('../../images/l2adena-site-bkg.png');
   background-repeat:no-repeat;
   background-size:100%;
+}
+
+a {
+  color:#86A64D;
 }
 
 /** HEADERS **/

@@ -1,0 +1,7 @@
+<h1>Create News</h1>
+
+<%= form_for(@news, :url => {:controller => '/admin/news', :action => 'create'}) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+  <%= f.submit %>
+<% end %>

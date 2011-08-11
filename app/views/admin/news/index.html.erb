@@ -1,0 +1,21 @@
+<h1>Manage News Items</h1>
+
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>User</th>
+  </tr>
+
+  <% @news_items.each do |news| %>
+    <tr>
+      <td><%= news.created_at %></td>
+      <td><%= news.name %></td>
+      <td><%= news.user.username %></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @news_items %>
+
+<%= link_to("New News Item", new_admin_news_path) %>

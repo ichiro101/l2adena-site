@@ -1,7 +1,7 @@
 class CreateNews < ActiveRecord::Migration
   def self.up
     create_table :news do |t|
-      t.references :user
+      t.references :user, :null => false
       t.text :content
       t.string :name
 

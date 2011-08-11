@@ -4,8 +4,8 @@ javascripts:
   default_javascripts:
     - public/javascripts/jquery.js
     - public/javascripts/jquery_ujs.js
-    - public/javascripts/application.js
     - public/javascripts/modernizr.js
+    - public/javascripts/application.js
 
 stylesheets:
   common:

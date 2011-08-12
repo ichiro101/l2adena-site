@@ -29,10 +29,13 @@ class GameAccountsController < ApplicationController
       user_game_account = UserGameAccount.new
       user_game_account.user_id = current_user.id
       user_game_account.login = @game_account.login
-      user_game_account.save
-
-      flash[:success] = "Your ingame account has been associated"
-      redirect_to(:action => 'index')
+      if user_game_account.save
+        flash[:success] = "Your ingame account has been associated"
+        redirect_to(:action => 'index')
+      else
+        flash[:failure] = "Account has already been associated"
+        redirect_to(:action => 'index')
+      end
     else
       render('new')
     end

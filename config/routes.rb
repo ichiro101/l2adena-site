@@ -17,7 +17,7 @@ L2adena::Application.routes.draw do
 
     resources :user
     resources :news
-    resources :page
+    resources :pages
   end
 
   resources :services, :only => [:index, :create, :destroy] do

@@ -1,6 +1,4 @@
-class Admin::NewsController < ApplicationController
-
-  layout 'admin'
+class Admin::NewsController < Admin::AdminController
 
   def index
     @news_items = News.paginate(:page => params[:page])

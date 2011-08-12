@@ -12,12 +12,18 @@ L2adena::Application.routes.draw do
     root :to => 'home#index'
 
     resources :home, :only => [:index] do
-
+      collection do
+      end
     end
 
     resources :user
     resources :news
-    resources :pages
+    resources :pages do
+      member do
+        get 'move_up'
+        get 'move_down'
+      end
+    end
   end
 
   resources :services, :only => [:index, :create, :destroy] do

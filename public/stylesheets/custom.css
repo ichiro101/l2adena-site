@@ -138,7 +138,7 @@ div#right-links {
   z-index: 1;
 }
 
-div#right-links img, div#right-links p, div#right-links a {
+div#right-links img, div#right-links p, div#right-links a, div#right-links br {
   margin:0;
 }
 

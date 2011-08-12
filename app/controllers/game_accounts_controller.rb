@@ -33,7 +33,7 @@ class GameAccountsController < ApplicationController
         flash[:success] = "Your ingame account has been associated"
         redirect_to(:action => 'index')
       else
-        flash[:failure] = "Account has already been associated"
+        flash[:error] = "Account has already been associated"
         redirect_to(:action => 'index')
       end
     else

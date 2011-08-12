@@ -13,9 +13,9 @@
 
     <h2>Sign in with Username and Password</h2>
     <%= form_tag({:controller => 'accounts', :action => 'signin'}, :method => 'post') do %>
-          <%= label_tag :username %>
+          <%= label_tag :username %><br />
           <%= text_field_tag :username %><br />
-          <%= label_tag :password %>
+          <%= label_tag :password %><br />
           <%= password_field_tag :password %><br />
       <%= submit_tag "Login" %>
     <% end %>

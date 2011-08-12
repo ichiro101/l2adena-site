@@ -6,6 +6,7 @@
     <th>Date</th>
     <th>Title</th>
     <th>User</th>
+    <th>Actions</th>
   </tr>
 
   <% @news_items.each do |news| %>
@@ -13,6 +14,7 @@
       <td><%= news.created_at %></td>
       <td><%= news.name %></td>
       <td><%= news.user.username %></td>
+      <td><%= link_to("Show", admin_news_path(news)) %></td>
     </tr>
   <% end %>
 </table>

@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
 
   def show_page
-    @page = Page.where(:permalink => params[:id]).first
+    @page = Page.where(:permalink => params[:id], :visible => true).first
   end
 
 end

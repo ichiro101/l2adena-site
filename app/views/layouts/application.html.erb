@@ -56,9 +56,7 @@
 
     <div id="middle">
       <div id="side-menu" class="span-5">
-        <ul>
-          <li><%= link_to("Game Control Panel", :controller => 'game_accounts') %></li>
-        </ul>
+        <%= render(:partial => 'shared/side_menu') %>
       </div>
 
       <div id="page-content" class="span-15">

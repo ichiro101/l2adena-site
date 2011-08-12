@@ -138,6 +138,10 @@ div#right-links {
   z-index: 1;
 }
 
+div#right-links img, div#right-links p, div#right-links a {
+  margin:0;
+}
+
 /** FOOTER */
 div#footer-content {
   background-color:#FFECF6;

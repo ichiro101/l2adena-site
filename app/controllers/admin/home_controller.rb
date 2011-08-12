@@ -4,8 +4,4 @@ class Admin::HomeController < Admin::AdminController
     @title = "Welcome to Administrative Dashboard"
   end
 
-  def edit_main_page
-
-  end
-
 end

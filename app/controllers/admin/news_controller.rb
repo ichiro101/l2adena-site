@@ -45,4 +45,11 @@ class Admin::NewsController < Admin::AdminController
     end
   end
 
+  def destroy
+    news = News.find(params[:id])
+    news.delete
+    flash[:success] = "The news item has been deleted"
+    redirect_to admin_news_index_path
+  end
+
 end

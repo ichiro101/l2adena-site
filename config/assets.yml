@@ -1,5 +1,3 @@
-package_assets: always
-
 javascripts:
   default_javascripts:
     - public/javascripts/jquery.js

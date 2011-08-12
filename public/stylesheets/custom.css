@@ -2,11 +2,11 @@
 body {
   background-image:url('/images/l2adena-site-bkg.png');
   background-repeat:no-repeat;
-  background-size:100%;
-  -moz-background-size: 100%;           /* Gecko 1.9.2 (Firefox 3.6) */
-  -ms-background-size: 100%;
-  -o-background-size: 100%;           /* Opera 9.5 */
-  -webkit-background-size: 100%;           /* Safari 3.0 */
+  background-size:100% auto;
+  -moz-background-size: 100% auto;           /* Gecko 1.9.2 (Firefox 3.6) */
+  -ms-background-size: 100% auto;
+  -o-background-size: 100% auto;           /* Opera 9.5 */
+  -webkit-background-size: 100% auto;           /* Safari 3.0 */
 }
 
 a {

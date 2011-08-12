@@ -20,6 +20,7 @@ div#logo {
   margin:0;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#server-status {
@@ -27,6 +28,7 @@ div#server-status {
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 2;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#server-status div.status {
@@ -48,6 +50,7 @@ div#badge {
   box-shadow: 2px 2px 5px 1px #000000;
   padding:10px;
   z-index: 1;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#badge img {
@@ -66,6 +69,7 @@ div#new-user {
   margin-top:10px;
   margin-bottom:0;
   box-shadow: 2px 2px 5px 1px #000000;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#middle {
@@ -89,6 +93,7 @@ div#side-menu {
   top:30px;
   margin-right:0;
   z-index: 2;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#side-menu ul {
@@ -119,6 +124,7 @@ div#page-content {
   padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#page-content .box {
@@ -136,6 +142,7 @@ div#right-links {
   top:30px;
   box-shadow: 2px 2px 5px 1px #000000;
   z-index: 1;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#right-links img, div#right-links p, div#right-links a, div#right-links br {
@@ -149,6 +156,7 @@ div#footer-content {
   padding:10px;
   box-shadow: 2px 2px 5px 1px #000000;
   top:80px;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#footer-content span.right {

@@ -20,6 +20,7 @@ gem 'oa-openid', :require => 'omniauth/openid'
 
 gem 'gravatar-ultimate'
 gem 'will_paginate', '~> 3.0'
+gem 'acts_as_list'
 
 gem 'jquery-rails', '>= 1.0.12'
 

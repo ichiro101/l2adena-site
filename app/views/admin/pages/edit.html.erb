@@ -1,0 +1,10 @@
+<h1>Create new Page</h1>
+
+<% if @page.errors.any? %>
+  <%= error_messages_for(@page) %>
+<% end %>
+
+<%= form_for(@page, :url => {:controller => '/admin/pages', :action => 'create'}) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+  <%= f.submit %>
+<% end %>

@@ -1,1 +1,27 @@
 <h1>Manage Pages</h1>
+
+<table>
+  <tr>
+    <th>Page Title</th>
+    <th>Permalink</th>
+    <th>Position</th>
+    <th>Visible</th>
+    <th>Action</th>
+  </tr>
+
+  <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.name %></td>
+      <td><%= page.permalink %></td>
+      <td><%= page.position %></td>
+      <td><%= page.visible %></td>
+      <td>
+        <%= link_to("Show", admin_page_path(page)) %>
+        <%= link_to("Edit", edit_admin_page_path(page)) %>
+        <%= link_to("Destroy", admin_page_path(page), :confirm => 'Are you sure you wish to permalantly delete this page', :method => :delete) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to("Add New Page", new_admin_page_path) %>

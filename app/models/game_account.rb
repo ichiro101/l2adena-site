@@ -24,6 +24,7 @@ class GameAccount < ActiveRecord::Base
 
   # convert plain_password to password
   before_save :encrypt_password
+  before_save :set_default_server
   attr_accessor :plain_password
 
   private
@@ -37,6 +38,10 @@ class GameAccount < ActiveRecord::Base
         self.password = GameAccount.old_encrypt(self.plain_password)
       end
     end
+  end
+
+  def set_default_server
+    self.lastServer = 13
   end
 
   # Use the default l2j encryption

@@ -190,3 +190,8 @@ div#footer-content {
 div#footer-content span.right {
   text-align:right;
 }
+
+/** SPECIAL (these don't show up on all pages) */
+span.account-name {
+  color:#0D132A;
+}

@@ -8,7 +8,7 @@
   You currently have <%= pluralize(@user_game_accounts.size, "ingame account") %>.
   <% @user_game_accounts.each do |user_game_account| %>
     <div class="game-account box">
-      <strong>Login:</strong> <span class="quiet"><%= user_game_account.login %></span><br />
+      <strong>Login:</strong> <span class="account-name"><%= user_game_account.login %></span><br />
           <%= link_to("Change Password", {:action => 'edit', :id => user_game_account.login}) %>
     </div>
   <% end %>

@@ -1,7 +1,20 @@
+/** Stuff that affects the entire page */
 body {
-  background-image:url('../../images/l2adena-site-bkg.png');
+  background-image:url('/images/l2adena-site-bkg.png');
   background-repeat:no-repeat;
-  background-size:100%;
+  background-size:100% auto;
+  -moz-background-size: 100% auto;           /* Gecko 1.9.2 (Firefox 3.6) */
+  -ms-background-size: 100% auto;
+  -o-background-size: 100% auto;           /* Opera 9.5 */
+  -webkit-background-size: 100% auto;           /* Safari 3.0 */
+}
+
+a {
+  color:#5F163C ;
+}
+
+a:hover {
+  color:#4E6C19;
 }
 
 /** HEADERS **/
@@ -10,14 +23,22 @@ div#logo {
   background-color:#fff;
   margin:0;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#server-status {
   position: relative;
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 2;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#server-status div.status {
@@ -25,12 +46,24 @@ div#server-status div.status {
   left:10px;
 }
 
+div#server-status .online {
+  color:#52E93A;
+}
+
+div#server-status .offline {
+  color:#FF4E40;
+}
+
 div#badge {
   position: relative;
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   padding:10px;
   z-index: 1;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#badge img {
@@ -49,6 +82,10 @@ div#new-user {
   margin-top:10px;
   margin-bottom:0;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#middle {
@@ -68,10 +105,14 @@ div#dismiss {
 div#side-menu {
   background-color:#fff;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   position:relative;
   top:30px;
   margin-right:0;
   z-index: 2;
+  behavior: url('/stylesheets/PIE.htc');
 }
 
 div#side-menu ul {
@@ -86,7 +127,7 @@ div#side-menu ul li {
   margin-top:5px;
   margin-left:5px;
   background-color:#FFECF6;
-  box-shadow: 2px 2px 5px 1px #000000;
+  border:1px solid #A64D7C;
 }
 
 div#side-menu ul li a {
@@ -101,7 +142,15 @@ div#page-content {
   background-color:#fff;
   padding:15px;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 3;
+  behavior: url('/stylesheets/PIE.htc');
+}
+
+div#page-content .box {
+  background-color:#FFF5FA;
 }
 
 div#page-content ul {
@@ -114,7 +163,15 @@ div#right-links {
   padding:10px;
   top:30px;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   z-index: 1;
+  behavior: url('/stylesheets/PIE.htc');
+}
+
+div#right-links img, div#right-links p, div#right-links a, div#right-links br {
+  margin:0;
 }
 
 /** FOOTER */
@@ -123,5 +180,13 @@ div#footer-content {
   position:relative;
   padding:10px;
   box-shadow: 2px 2px 5px 1px #000000;
+  -moz-box-shadow: 2px 2px 5px 1px #000000;
+  -o-box-shadow: 2px 2px 5px 1px #000000;
+  -webkit-box-shadow: 2px 2px 5px 1px #000000;
   top:80px;
+  behavior: url('/stylesheets/PIE.htc');
+}
+
+div#footer-content span.right {
+  text-align:right;
 }

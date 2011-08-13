@@ -1,0 +1,9 @@
+<h1>Create News</h1>
+
+<% if @news.errors.any? %>
+  <%= error_messages_for(@news) %>
+<% end %>
+<%= form_for(@news, :url => {:controller => '/admin/news', :action => 'create'}) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+  <%= f.submit %>
+<% end %>

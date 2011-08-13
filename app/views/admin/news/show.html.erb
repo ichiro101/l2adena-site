@@ -1,0 +1,5 @@
+<h1>Show News Item</h1>
+
+<h2><%= @news.name %>(<%= link_to("Edit", edit_admin_news_path(@news)) %>)</h2>
+
+<p><%= raw(@news.content) %></p>

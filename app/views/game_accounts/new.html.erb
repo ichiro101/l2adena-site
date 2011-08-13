@@ -4,20 +4,12 @@
   <%= error_messages_for(@game_account) %>
 <% end %>
 <%= form_for(@game_account, :url => {:action => 'create'}) do |f| %>
-<table>
-  <tr>
-    <td><%= f.label :login %></td>
-    <td><%= f.text_field :login %></td>
-  </tr>
-  <tr>
-    <td><%= f.label :plain_password, "Password" %></td>
-    <td><%= f.password_field :plain_password %></td>
-  </tr>
-  <tr>
-    <td><%= label_tag :show_password %></td>
-    <td><%= check_box_tag :show_password, "", false, {:onchange => 'showPassword();'} %></td>
-  </tr>
-</table>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %><br />
+    <%= f.label :plain_password, "Password" %><br />
+    <%= f.password_field :plain_password %><br />
+    <%= label_tag :show_password %>
+    <%= check_box_tag :show_password, "", false, {:onchange => 'showPassword();'} %><br />
   <%= f.submit "Register Ingame Account" %>
 <% end %>
 <script type="text/javascript">

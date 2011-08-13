@@ -24,7 +24,37 @@ class GameAccount < ActiveRecord::Base
 
   # convert plain_password to password
   before_save :encrypt_password
+  before_save :set_default_server
   attr_accessor :plain_password
+
+  # Check if username and password can be authenticated into l2j
+  def self.authenticate(username, password)
+    account = GameAccount.where(:login => username)
+
+    if account.size == 0
+      return false
+    else
+      account = account.first
+    end
+
+    if account.password.starts_with?('bcrypt:')
+      account.password =~ /bcrypt:(.*)/
+      encrypted_password = $1
+      bcrypt_password_object = Password.new(encrypted_password)
+
+      if bcrypt_password_object == password
+        return true
+      else
+        return false
+      end
+    else
+      if account.password == GameAccount.old_encrypt(password)
+        return true
+      else
+        return false
+      end
+    end
+  end
 
   private
 
@@ -39,6 +69,10 @@ class GameAccount < ActiveRecord::Base
     end
   end
 
+  def set_default_server
+    self.lastServer = 13
+  end
+
   # Use the default l2j encryption
   #
   # NOTE: This is not as secure as BCrypt. Please see
@@ -46,6 +80,7 @@ class GameAccount < ActiveRecord::Base
   def self.old_encrypt(password)
     sha1_hash = Digest::SHA1.hexdigest password
     crypt = Base64.encode64(sha1_hash.split.pack("H*"))
+    crypt.strip
   end
 
 end

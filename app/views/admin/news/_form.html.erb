@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag '/markitup/markitup/skins/markitup/style' %>
+<%= stylesheet_link_tag '/markitup/markitup/sets/default/style' %>
+
+<%= javascript_include_tag '/markitup/markitup/jquery.markitup.js' %>
+<%= javascript_include_tag '/markitup/markitup/sets/default/set.js' %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#news_content').markItUp(mySettings);
+      });
+</script>
+<%= f.label :name %><br />
+<%= f.text_field :name %><br />
+
+<%= f.label :content %><br />
+<%= f.text_area :content %><br />

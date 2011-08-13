@@ -8,8 +8,23 @@ L2adena::Application.routes.draw do
   match '/auth/:service/callback' => 'services#create'
   match '/auth/failure' => 'services#failure'
 
-  match '/admin/user/:action(/:id)' => 'admin/user'
-  match '/admin/:action(/:id)' => 'admin/home'
+  namespace 'admin' do
+    root :to => 'home#index'
+
+    resources :home, :only => [:index] do
+      collection do
+      end
+    end
+
+    resources :user
+    resources :news
+    resources :pages do
+      member do
+        get 'move_up'
+        get 'move_down'
+      end
+    end
+  end
 
   resources :services, :only => [:index, :create, :destroy] do
     collection do
@@ -28,6 +43,7 @@ L2adena::Application.routes.draw do
       get 'undismiss_newbie_bar'
     end
   end
+
 
   match '/accounts/:action' => 'accounts'
 
@@ -81,6 +97,8 @@ L2adena::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  match '(/:id)' => 'home#show_page'
+
   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"

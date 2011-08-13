@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def dismiss_newbie_bar
     session[:hide_newbie_bar] = true
     redirect_to session[:return_to]
+    flash[:info] = "I have hidden the newbie instructions and I hope you got Lineage 2 working, if you want the instructions again, click Re-show Connection Instructions link on the bottom."
     session[:return_to] = nil
   end
 

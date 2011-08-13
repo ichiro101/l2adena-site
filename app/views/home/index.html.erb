@@ -1,3 +1,36 @@
-<div class="container">
+<style type="text/css">
+  div.poster-info img {
+    width:52px;
+    float:left;
+    margin:10px;
+  }
+
+  div.poster-info .info-text {
+    position:relative;
+    top:10px;
+  }
+
+  div.poster-info .info-text h4 {
+    margin-bottom:0;
+  }
+</style>
 <h1>Welcome to L2Adena</h1>
-</div>
+
+<% @news_items.each do |news_item| %>
+  <div class="news-item">
+    <div class="poster-info">
+      <%= image_tag(Gravatar.new(news_item.user.email).image_url) %>
+      <div class="info-text">
+        <h4><%= news_item.name %></h4>
+        <span class="quiet">Posted on <%= news_item.created_at %></span><br />
+        By <strong><%= news_item.user.username %></strong>
+      </div>
+    </div>
+    <div class="clear"></div>
+
+    <div class="news-content box">
+      <%= raw(news_item.content) %>
+    </div>
+    <hr />
+  </div>
+<% end %>

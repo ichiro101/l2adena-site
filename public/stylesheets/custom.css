@@ -10,7 +10,7 @@ body {
 }
 
 a {
-  color:#5F163C ;
+  color:#0E192D;
 }
 
 a:hover {
@@ -126,8 +126,8 @@ div#side-menu ul li {
   width:160px;
   margin-top:5px;
   margin-left:5px;
-  background-color:#FFECF6;
-  border:1px solid #A64D7C;
+  background-color:#BAC2D0;
+  border:1px solid #2D4269;
 }
 
 div#side-menu ul li a {
@@ -176,7 +176,7 @@ div#right-links img, div#right-links p, div#right-links a, div#right-links br {
 
 /** FOOTER */
 div#footer-content {
-  background-color:#FFECF6;
+  background-color:#C0C6D0;
   position:relative;
   padding:10px;
   box-shadow: 2px 2px 5px 1px #000000;

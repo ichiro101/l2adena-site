@@ -7,6 +7,9 @@ class HomeController < ApplicationController
 
   def show_page
     @page = Page.where(:permalink => params[:id], :visible => true).first
+    if @page.nil?
+      raise PageNotExistException
+    end
   end
 
 end

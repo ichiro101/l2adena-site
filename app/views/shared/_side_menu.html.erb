@@ -1,6 +1,7 @@
 <% pages = Page.where(:visible => true).order('position ASC') %>
 <ul>
   <li><%= link_to("Game Control Panel", :controller => 'game_accounts') %></li>
+  <li><%= link_to("Support", :controller => 'tickets') %></li>
   <% pages.each do |page| %>
     <li><%= link_to(page.name, {:controller => 'home', :action => 'show_page', :id => page.permalink}) %></li>
   <% end %>

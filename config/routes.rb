@@ -25,7 +25,7 @@ L2adena::Application.routes.draw do
       end
     end
   end
-
+  resources :tickets
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'

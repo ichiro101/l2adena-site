@@ -9,8 +9,6 @@ L2adena::Application.routes.draw do
   match '/auth/failure' => 'services#failure'
 
   namespace 'admin' do
-    root :to => 'home#index'
-
     resources :home, :only => [:index] do
       collection do
       end
@@ -18,12 +16,15 @@ L2adena::Application.routes.draw do
 
     resources :user
     resources :news
+    resources :tickets
     resources :pages do
       member do
         get 'move_up'
         get 'move_down'
       end
     end
+
+    root :to => 'home#index'
   end
   resources :tickets
   resources :services, :only => [:index, :create, :destroy] do

@@ -1,0 +1,20 @@
+<h1>Tickets</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Opened at</th>
+    <th>Subject</th>
+  </tr>
+
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.id %></td>
+      <td><%= ticket.created_at %></td>
+      <td><%= ticket.name %></td>
+      <td>
+        <%= link_to 'View', admin_ticket_path(ticket) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

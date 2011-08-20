@@ -1,0 +1,8 @@
+<h1>View Ticket Information - #<%= @ticket.id %></h1>
+<%= link_to "<< View Tickets", admin_tickets_path %>
+
+<h2><%= @ticket.name %></h2>
+
+<div id="ticket-content" class="box">
+  <%= @ticket.content %>
+</div>

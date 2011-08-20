@@ -1,0 +1,7 @@
+<h1>Show Ticket: <%= @ticket.name %></h1>
+
+<%= link_to "<< Back to Support", tickets_path %>
+
+<div id="ticket-content" class="box">
+  <%= @ticket.content %>
+</div>

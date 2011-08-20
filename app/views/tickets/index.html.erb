@@ -11,13 +11,27 @@ of course, not disclose any names here because we respect your privacy.
 
 <h2>Tickets You Started</h2>
 <% if @tickets.any? %>
-
+  <table>
+    <tr>
+      <th>Ticket ID</th>
+      <th>Subject</th>
+    </tr>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><%= ticket.name %></td>
+        <td>
+          <%= link_to("View Ticket", ticket_path(ticket)) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 <% else %>
   <p>You have not made any support tickets.</p>
 <% end %>
 
 <h2>Ticket Form</h2>
-
+<%= error_messages_for(@ticket) %>
 <%= form_for(@ticket) do |f| %>
   <%= f.label :name, "Briefly describe the issue you are having" %><br />
   <%= f.text_field :name %><br />

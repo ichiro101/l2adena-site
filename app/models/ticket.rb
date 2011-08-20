@@ -47,6 +47,20 @@ class Ticket < ActiveRecord::Base
       end
       nil
     end
+
+    def self.find(id)
+      all_items = TicketStatus.all
+      all_items.each do |item|
+        return item if item.id == id
+      end
+      nil
+    end
+  end
+
+  def status_label
+    status = Ticket::TicketStatus.find(self.status)
+    raise StandardError if status.nil?
+    status.label
   end
 
   validates_presence_of :name

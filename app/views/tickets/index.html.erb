@@ -13,13 +13,15 @@ of course, not disclose any names here because we respect your privacy.
 <% if @tickets.any? %>
   <table>
     <tr>
-      <th>Ticket ID</th>
+      <th>Opened</th>
       <th>Subject</th>
+      <th>Status</th>
     </tr>
     <% @tickets.each do |ticket| %>
       <tr>
-        <td><%= ticket.id %></td>
+        <td><%= ticket.created_at %></td>
         <td><%= ticket.name %></td>
+        <td><%= ticket.status_label %></td>
         <td>
           <%= link_to("View Ticket", ticket_path(ticket)) %>
         </td>

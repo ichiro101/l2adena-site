@@ -1,0 +1,28 @@
+<h1>Support</h1>
+<p>
+If you wish to contact the staff for any reasons, you may use our ticket system. 
+Communications between you and the staff via the ticket system
+will be strictly private, however, we may opt to add your question
+to a knowledge base if we think that the information that is used to
+answer your question will be helpful other players on the server (most of these
+will be technical issues that we find many other players have). We will
+of course, not disclose any names here because we respect your privacy.
+</p>
+
+<h2>Tickets You Started</h2>
+<% if @tickets.any? %>
+
+<% else %>
+  <p>You have not made any support tickets.</p>
+<% end %>
+
+<h2>Ticket Form</h2>
+
+<%= form_for(@ticket) do |f| %>
+  <%= f.label :name, "Briefly describe the issue you are having" %><br />
+  <%= f.text_field :name %><br />
+
+  <%= f.label :content, "Please provide as much details about your issue as you can, the more information you can provide the more we can help" %><br />
+  <%= f.text_area :content %><br />
+  <%= f.submit %>
+<% end %>

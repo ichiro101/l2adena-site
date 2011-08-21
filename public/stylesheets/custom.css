@@ -43,6 +43,7 @@ div#server-status {
 
 div#server-status div.status {
   position:relative;
+  margin-right:10px;
   left:10px;
 }
 

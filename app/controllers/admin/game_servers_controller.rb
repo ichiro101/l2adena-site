@@ -1,5 +1,7 @@
 class Admin::GameServersController < Admin::AdminController
 
+  before_filter :check_gameserver_information_access
+
   def index
     @game_servers = GameServer.all
   end
@@ -73,6 +75,12 @@ class Admin::GameServersController < Admin::AdminController
     @game_server = GameServer.find(params[:id])
     @game_server.move_lower
     redirect_to admin_game_servers_path
+  end
+
+  private
+
+  def check_gameserver_information_access
+    check_access(:gameserver_information)
   end
 
 end

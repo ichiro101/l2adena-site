@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :user_signed_in?
+  helper_method :check_access
 
   rescue_from Exceptions::AccessDenied, :with => :access_denied
 
@@ -32,5 +33,13 @@ class ApplicationController < ActionController::Base
   def access_denied
     flash[:error] = "You do not have permission to access this resource"
     redirect_to root_url
+  end
+
+  def check_access(permission)
+    if current_user.can_access?(permission)
+      return true
+    else
+      raise Exceptions::AccessDenied, "Access Denied"
+    end
   end
 end

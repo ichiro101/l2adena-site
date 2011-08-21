@@ -1,4 +1,5 @@
 require 'bcrypt'
+require 'digest/sha1'
 class GameAccount < ActiveRecord::Base
   include BCrypt
 

@@ -18,6 +18,17 @@ class Admin::TicketRepliesController < Admin::AdminController
         return
       else
         flash[:notice] = "Ticket status has been changed"
+        @ticket_status_change = TicketStatusChange.new
+        @ticket_status_change.status_change = params[:ticket][:status]
+        @ticket_status_change.user = current_user
+        @ticket_status_change.ticket = @ticket
+        if @ticket_status_change.save
+          @ticket_reply.ticket_status_change_id = @ticket_status_change.id
+        else
+          flash[:error] = "Something went wrong while changing the ticket status"
+          render('admin/tickets/show')
+          return
+        end
       end
     end
 

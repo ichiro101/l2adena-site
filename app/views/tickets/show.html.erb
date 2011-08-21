@@ -8,14 +8,21 @@
 </div>
 
 <% @ticket_replies.each do |ticket_reply| %>
-  <div id="replier-info">
+  <div class="replier-info">
     <%= image_tag(Gravatar.new(ticket_reply.user.email).image_url) %>
     By <strong><%= ticket_reply.user.username %></strong><br />
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
   </div>
-  <div id="reply-content" class="box">
+  <div class="reply-content box">
     <%= ticket_reply.content %>
   </div>
+  <% if !ticket_reply.ticket_status_change.nil? %>
+    <div class="status-change">
+      <strong><%= ticket_reply.user.username %></strong> 
+      has changed the status of the ticket to 
+      <strong><%= ticket_reply.ticket_status_change.status_change_label %></strong>
+    </div>
+  <% end %>
 <% end %>
 
 <%= error_messages_for(@ticket_reply) %>
@@ -26,9 +33,15 @@
 <% end %>
 
 <style type="text/css">
-  div#replier-info img{
+  div.replier-info img{
     width:32px;
     float:left;
     margin-right: 10px;
+  }
+
+  div.status-change {
+    padding:10px;
+    margin-bottom:10px;
+    background-color:#ddd;
   }
 </style>

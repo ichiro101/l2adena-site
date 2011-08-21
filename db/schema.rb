@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110820212248) do
+ActiveRecord::Schema.define(:version => 20110821073859) do
 
   create_table "forum_categories", :force => true do |t|
     t.string   "name"
@@ -96,14 +96,16 @@ ActiveRecord::Schema.define(:version => 20110820212248) do
   end
 
   create_table "ticket_replies", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.integer  "ticket_id",  :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "ticket_id",               :null => false
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "ticket_status_change_id"
   end
 
   add_index "ticket_replies", ["ticket_id"], :name => "index_ticket_replies_on_ticket_id"
+  add_index "ticket_replies", ["ticket_status_change_id"], :name => "index_ticket_replies_on_ticket_status_change_id"
   add_index "ticket_replies", ["user_id"], :name => "index_ticket_replies_on_user_id"
 
   create_table "ticket_status_changes", :force => true do |t|

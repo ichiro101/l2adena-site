@@ -3,18 +3,18 @@
 
 <h2><%= @ticket.name %></h2>
 
-<div id="user-info">
+<div class="user-info">
   <%= image_tag(Gravatar.new(@ticket.user.email).image_url) %>
   By <strong><%= @ticket.user.username %></strong><br />
   <span class="quiet">Posted on <%= @ticket.created_at %></span><br />
 </div>
-<div id="ticket-content" class="box">
+<div class="ticket-content box">
   <%= @ticket.content %>
 </div>
 
 <hr />
 <% @ticket_replies.each do |ticket_reply| %>
-  <div id="user-info">
+  <div class="user-info">
     <%= image_tag(Gravatar.new(ticket_reply.user.email).image_url) %>
     By <strong><%= ticket_reply.user.username %></strong><br />
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
@@ -22,6 +22,13 @@
   <div class="box">
     <%= ticket_reply.content %>
   </div>
+  <% unless ticket_reply.ticket_status_change.nil? %>
+    <div class="status-change box">
+      <strong><%= ticket_reply.user.username %></strong> 
+      has changed the status of the ticket to 
+      <strong><%= ticket_reply.ticket_status_change.status_change_label %></strong>
+    </div>
+  <% end %>
 <% end %>
 
 <h2>Reply</h2>
@@ -53,9 +60,13 @@
 </script>
 
 <style type="text/css">
-  div#user-info img {
+  div.user-info img {
     width:32px;
     float:left;
     margin-right:10px;
+  }
+
+  div.status-change {
+    background-color:#ddd;
   }
 </style>

@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>ID</th>
+    <th>By</th>
     <th>Opened at</th>
     <th>Subject</th>
     <th>Status</th>
@@ -11,6 +12,7 @@
   <% @tickets.each do |ticket| %>
     <tr>
       <td><%= ticket.id %></td>
+      <td><%= ticket.user.username %></td>
       <td><%= ticket.created_at %></td>
       <td><%= ticket.name %></td>
       <td><%= ticket.status_label %></td>

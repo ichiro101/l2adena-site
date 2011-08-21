@@ -3,12 +3,22 @@
 
 <h2><%= @ticket.name %></h2>
 
+<div id="user-info">
+  <%= image_tag(Gravatar.new(@ticket.user.email).image_url) %>
+  By <strong><%= @ticket.user.username %></strong><br />
+  <span class="quiet">Posted on <%= @ticket.created_at %></span><br />
+</div>
 <div id="ticket-content" class="box">
   <%= @ticket.content %>
 </div>
 
 <hr />
 <% @ticket_replies.each do |ticket_reply| %>
+  <div id="user-info">
+    <%= image_tag(Gravatar.new(ticket_reply.user.email).image_url) %>
+    By <strong><%= ticket_reply.user.username %></strong><br />
+    <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
+  </div>
   <div class="box">
     <%= ticket_reply.content %>
   </div>
@@ -38,6 +48,14 @@
         } else {
           $("#status_change_select").css("display", "none");
         }
-        });
-      });
-    </script>
+     });
+  });
+</script>
+
+<style type="text/css">
+  div#user-info img {
+    width:32px;
+    float:left;
+    margin-right:10px;
+  }
+</style>

@@ -31,7 +31,7 @@ class Ticket < ActiveRecord::Base
       more_info.id = 3
       more_info.symbol = :more_info
       more_info.active = true
-      more_info.label = "More information is needed"
+      more_info.label = "More information is needed from user"
       all_ticket_status << more_info
 
       active = TicketStatus.new

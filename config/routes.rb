@@ -28,6 +28,7 @@ L2adena::Application.routes.draw do
     root :to => 'home#index'
   end
   resources :tickets
+  resources :ticket_replies
   resources :services, :only => [:index, :create, :destroy] do
     collection do
       get 'signin'

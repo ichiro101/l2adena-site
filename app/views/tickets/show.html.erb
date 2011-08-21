@@ -18,6 +18,13 @@
   </div>
 <% end %>
 
+<%= error_messages_for(@ticket_reply) %>
+<%= form_for(@ticket_reply, :url => {:controller => 'ticket_replies', :action => 'create', :id => @ticket.id}) do |f| %>
+  <%= f.label :content %><br />
+  <%= f.text_area :content %><br />
+  <%= f.submit %>
+<% end %>
+
 <style type="text/css">
   div#replier-info img{
     width:32px;

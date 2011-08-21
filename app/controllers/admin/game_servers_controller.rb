@@ -30,4 +30,28 @@ class Admin::GameServersController < Admin::AdminController
     end
   end
 
+  def edit
+    @game_server = GameServer.find(params[:id])
+  end
+
+  def update
+    @game_server = GameServer.find(params[:id])
+
+    @game_server.name = params[:game_server][:name]
+    @game_server.gameserver_hostname = params[:game_server][:gameserver_hostname]
+    @game_server.gameserver_port = params[:game_server][:gameserver_port].to_i
+    @game_server.gameserver_database_hostname = params[:game_server][:gameserver_database_hostname]
+    @game_server.gameserver_database_port = params[:game_server][:gameserver_database_port].to_i
+    @game_server.gameserver_database_username = params[:game_server][:gameserver_database_username]
+    @game_server.gameserver_database_password = params[:game_server][:gameserver_database_password]
+    @game_server.gameserver_database_name = params[:game_server][:gameserver_database_name]
+
+    if @game_server.save
+      flash[:notice] = "Game server information has been updated"
+      redirect_to admin_game_servers_path
+    else
+      render('admin/game_servers/edit')
+    end
+  end
+
 end

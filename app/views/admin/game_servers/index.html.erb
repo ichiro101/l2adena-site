@@ -9,6 +9,9 @@ characters through the administration panel</p>
     </tr>
     <% @game_servers.each do |server| %>
       <td><%= server.name %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_game_server_path(server) %>
+      </td>
     <% end %>
   </table>
 <% else %>

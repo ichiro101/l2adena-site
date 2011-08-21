@@ -1,1 +1,9 @@
+<%= link_to "<< Back to Game Servers", admin_game_servers_path %>
+
 <h1>Add new Game Server</h1>
+<%= error_messages_for @game_server %>
+<%= form_for(@game_server, :url => admin_game_servers_path) do |f| %>
+  <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+  <%= f.submit %>
+<% end %>

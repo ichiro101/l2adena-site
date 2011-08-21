@@ -1,2 +1,18 @@
 <h1>Manage Game Servers</h1>
+<p>Adding gameserver information here will allow this application to manage ingame
+characters through the administration panel</p>
 
+<% if @game_servers.any? %>
+  <table>
+    <tr>
+      <th>Server name</th>
+    </tr>
+    <% @game_servers.each do |server| %>
+      <td><%= server.name %></td>
+    <% end %>
+  </table>
+<% else %>
+  <p>There are currently no game servers</p>
+<% end %>
+
+<%= link_to "Add new Gameserver", new_admin_game_server_path %>

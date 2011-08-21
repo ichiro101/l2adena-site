@@ -11,6 +11,9 @@ characters through the administration panel</p>
       <td><%= server.name %></td>
       <td>
         <%= link_to "Edit", edit_admin_game_server_path(server) %>
+        <%= link_to "Move Up", move_up_admin_game_server_path(server) %>
+        <%= link_to "Move Down", move_down_admin_game_server_path(server) %>
+        <%= link_to "Delete", admin_game_server_path(server), {:method => :delete, :confirm => "Are you sure?"} %>
       </td>
     <% end %>
   </table>

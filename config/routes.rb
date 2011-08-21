@@ -18,7 +18,13 @@ L2adena::Application.routes.draw do
     resources :news
     resources :tickets
     resources :ticket_replies
-    resources :game_servers
+
+    resources :game_servers do
+      member do
+        get 'move_up'
+        get 'move_down'
+      end
+    end
 
     resources :pages do
       member do

@@ -56,4 +56,23 @@ class Admin::GameServersController < Admin::AdminController
     end
   end
 
+  def destroy
+    game_server = GameServer.find(params[:id])
+    game_server.destroy
+    flash[:notice] = "Game server information has been removed"
+    redirect_to admin_game_servers_path
+  end
+
+  def move_up
+    @game_server = GameServer.find(params[:id])
+    @game_server.move_higher
+    redirect_to admin_game_servers_path
+  end
+
+  def move_down
+    @game_server = GameServer.find(params[:id])
+    @game_server.move_lower
+    redirect_to admin_game_servers_path
+  end
+
 end

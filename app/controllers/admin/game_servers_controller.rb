@@ -21,6 +21,7 @@ class Admin::GameServersController < Admin::AdminController
     @game_server.gameserver_database_username = params[:game_server][:gameserver_database_username]
     @game_server.gameserver_database_password = params[:game_server][:gameserver_database_password]
     @game_server.gameserver_database_name = params[:game_server][:gameserver_database_name]
+    @game_server.visible = params[:game_server][:visible]
 
     if @game_server.save
       flash[:notice] = "Game server has been added"
@@ -45,6 +46,7 @@ class Admin::GameServersController < Admin::AdminController
     @game_server.gameserver_database_username = params[:game_server][:gameserver_database_username]
     @game_server.gameserver_database_password = params[:game_server][:gameserver_database_password]
     @game_server.gameserver_database_name = params[:game_server][:gameserver_database_name]
+    @game_server.visible = params[:game_server][:visible]
 
     if @game_server.save
       flash[:notice] = "Game server information has been updated"

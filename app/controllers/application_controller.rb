@@ -23,6 +23,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def object_belongs_to_user(object)
+    user_id = object.user_id
+    raise Exceptions::AccessDenied if session[:user_id] != user_id
+    true
+  end
+
   def access_denied
     flash[:error] = "You do not have permission to access this resource"
     redirect_to root_url

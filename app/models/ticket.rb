@@ -1,4 +1,8 @@
 class Ticket < ActiveRecord::Base
+  belongs_to :user
+
+  has_many :ticket_replies
+  has_many :ticket_status_changes
 
   class TicketStatus
     attr_accessor :id

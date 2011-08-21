@@ -6,3 +6,22 @@
 <div id="ticket-content" class="box">
   <%= @ticket.content %>
 </div>
+
+<% @ticket_replies.each do |ticket_reply| %>
+  <div id="replier-info">
+    <%= image_tag(Gravatar.new(ticket_reply.user.email).image_url) %>
+    By <strong><%= ticket_reply.user.username %></strong><br />
+    <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
+  </div>
+  <div id="reply-content" class="box">
+    <%= ticket_reply.content %>
+  </div>
+<% end %>
+
+<style type="text/css">
+  div#replier-info img{
+    width:32px;
+    float:left;
+    margin-right: 10px;
+  }
+</style>

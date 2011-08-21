@@ -5,6 +5,7 @@
     <th>ID</th>
     <th>Opened at</th>
     <th>Subject</th>
+    <th>Status</th>
   </tr>
 
   <% @tickets.each do |ticket| %>
@@ -12,6 +13,7 @@
       <td><%= ticket.id %></td>
       <td><%= ticket.created_at %></td>
       <td><%= ticket.name %></td>
+      <td><%= ticket.status_label %></td>
       <td>
         <%= link_to 'View', admin_ticket_path(ticket) %>
       </td>

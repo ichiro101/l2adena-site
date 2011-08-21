@@ -1,0 +1,2 @@
+module Admin::TicketRepliesHelper
+end

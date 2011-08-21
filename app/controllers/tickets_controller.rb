@@ -27,6 +27,11 @@ class TicketsController < ApplicationController
 
   def show
     @ticket = Ticket.find(params[:id])
+
+    object_belongs_to_user(@ticket)
+
+    @ticket_replies = @ticket.ticket_replies
+    @ticket_reply = TicketReply.new
   end
 
 end

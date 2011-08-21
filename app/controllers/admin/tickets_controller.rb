@@ -6,5 +6,7 @@ class Admin::TicketsController < Admin::AdminController
 
   def show
     @ticket = Ticket.find(params[:id])
+    @ticket_replies = @ticket.ticket_replies
+    @ticket_reply = TicketReply.new
   end
 end

@@ -17,6 +17,7 @@ L2adena::Application.routes.draw do
     resources :user
     resources :news
     resources :tickets
+    resources :ticket_replies
     resources :pages do
       member do
         get 'move_up'

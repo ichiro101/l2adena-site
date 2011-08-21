@@ -6,3 +6,38 @@
 <div id="ticket-content" class="box">
   <%= @ticket.content %>
 </div>
+
+<hr />
+<% @ticket_replies.each do |ticket_reply| %>
+  <div class="box">
+    <%= ticket_reply.content %>
+  </div>
+<% end %>
+
+<h2>Reply</h2>
+<%= error_messages_for(@ticket_reply) %>
+<%= form_for(@ticket_reply, :url => {:controller => 'ticket_replies', :action => 'create', :id => @ticket.id}) do |f| %>
+  <%= f.label :content %><br />
+  <%= f.text_area :content %><br />
+
+  <%= check_box_tag :status_changed %>
+  <%= label_tag :status_changed, "Change Status?" %><br />
+
+  <div id="status_change_select" style="display:none;">
+    <%= label_tag :ticket_status, "New ticket status" %>
+    <%= collection_select :ticket, :status, Ticket::TicketStatus.all, :id, :label %>
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#status_changed").change(function() {
+        if($("#status_changed").attr("checked")) {
+          $("#status_change_select").css("display", "block");
+        } else {
+          $("#status_change_select").css("display", "none");
+        }
+        });
+      });
+    </script>

@@ -12,7 +12,10 @@
     <tr>
       <td><%= image_tag(Gravatar.new(user.email).image_url) %></td>
       <td><%= user.username %></td>
-      <td><%= link_to("Show", {:action => 'show', :id => user.id }) %></td>
+      <td>
+        <%= link_to("Show", {:action => 'show', :id => user.id }) %>
+        <%= link_to "Delete Web Account", admin_user_path(user), :method => :delete, :confirm => "Are you sure?" %>
+      </td>
     </tr>
   <% end %>
 </table>

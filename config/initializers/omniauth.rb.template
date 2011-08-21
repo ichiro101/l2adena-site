@@ -4,10 +4,10 @@
 # Make sure you replace your APP_ID and APP_SECRET with the APP_ID and APP_SECRET of
 # your facebook application
 #
-#Rails.application.config.middleware.use OmniAuth::Builder do
-#  require 'openid/store/filesystem'
-#
-#  provider :facebook, 'APP_ID', 'APP_SECRET'
-#  provider :open_id, OpenID::Store::Filesystem.new('/tmp'), {:name => "google", :identifier => "https://www.google.com/accounts/o8/id" }
-#  provider :open_id, OpenID::Store::Filesystem.new('/tmp')
-#end
+Rails.application.config.middleware.use OmniAuth::Builder do
+  require 'openid/store/filesystem'
+
+  provider :facebook, 'APP_ID', 'APP_SECRET'
+  provider :open_id, OpenID::Store::Filesystem.new('/tmp'), {:name => "google", :identifier => "https://www.google.com/accounts/o8/id" }
+  provider :open_id, OpenID::Store::Filesystem.new('/tmp')
+end

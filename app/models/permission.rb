@@ -7,8 +7,15 @@ class Permission
     p1.id = 1
     p1.symbol = :admin_panel
     p1.name = "Administrator Panel"
-
     permission_list << p1
+
+    p2 = Permission.new
+    p2.id = 2
+    p2.symbol = :gameserver_information
+    p2.name = "Database Information"
+    permission_list << p2
+
+    permission_list
   end
 
   def self.find_by_symbol(symbol)

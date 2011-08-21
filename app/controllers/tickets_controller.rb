@@ -3,6 +3,7 @@ class TicketsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @title = "L2Adena - Support"
     @tickets = Ticket.where(:user_id => current_user.id)
     @ticket = Ticket.new
   end

@@ -6,8 +6,14 @@ class ApplicationController < ActionController::Base
   helper_method :check_access
 
   rescue_from Exceptions::AccessDenied, :with => :access_denied
+  rescue_from Exceptions::PageNotExistException, :with => :page_not_found
 
   private
+
+  def page_not_found
+    flash[:error] = "The page you were looking for is not found"
+    redirect_to root_url
+  end
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

@@ -8,6 +8,7 @@ characters through the administration panel</p>
       <th>Server name</th>
     </tr>
     <% @game_servers.each do |server| %>
+    <tr>
       <td><%= server.name %></td>
       <td>
         <%= link_to "Edit", edit_admin_game_server_path(server) %>
@@ -15,6 +16,7 @@ characters through the administration panel</p>
         <%= link_to "Move Down", move_down_admin_game_server_path(server) %>
         <%= link_to "Delete", admin_game_server_path(server), {:method => :delete, :confirm => "Are you sure?"} %>
       </td>
+    </tr>
     <% end %>
   </table>
 <% else %>

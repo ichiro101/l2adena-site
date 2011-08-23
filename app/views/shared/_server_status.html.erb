@@ -1,5 +1,9 @@
 <% status_list.each do |status| %>
   <div class="status left">
-  <%= status.name %>: <%= raw(status.status_string) %>
+    <% if status.status == 1 %>
+      <%= status.name %>: <span class="online">Online</span>
+    <% else %>
+      <%= status.name %>: <span class="offline">Offline</span>
+    <% end %>
   </div>
 <% end %>

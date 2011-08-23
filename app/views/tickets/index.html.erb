@@ -42,3 +42,22 @@ of course, not disclose any names here because we respect your privacy.
   <%= f.text_area :content %><br />
   <%= f.submit %>
 <% end %>
+<%= stylesheet_link_tag '/markitup/skins/markitup/style' %>
+<%= stylesheet_link_tag '/markitup/sets/markdown/style' %>
+
+<%= javascript_include_tag '/markitup/jquery.markitup.js' %>
+<%= javascript_include_tag '/markitup/sets/markdown/set.js' %>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#ticket_content').markItUp(mySettings);
+  });
+</script>
+<style type="text/css">
+  div.markItUp {
+    width:550px; 
+  }
+
+  div.markItUp textarea {
+    width:490px; 
+  }
+</style>

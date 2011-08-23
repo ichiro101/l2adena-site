@@ -3,7 +3,7 @@
 <%= link_to "<< Back to Support", tickets_path %>
 
 <h2><%= @ticket.name %></h2>
-<div id="ticket-content" class="box">
+<div class="ticket-content">
   <%= raw RDiscount.new(@ticket.content).to_html %>
 </div>
 
@@ -13,7 +13,7 @@
     By <strong><%= ticket_reply.user.username %></strong><br />
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
   </div>
-  <div class="reply-content box">
+  <div class="reply-content">
     <%= raw RDiscount.new(ticket_reply.content).to_html %>
   </div>
   <% if !ticket_reply.ticket_status_change.nil? %>
@@ -38,9 +38,14 @@
 <%= javascript_include_tag '/markitup/sets/markdown/set.js' %>
 
 <style type="text/css">
-  div.box p {
-    margin:0;
-    padding:0;
+  div.ticket-content, div.reply-content {
+    background-color:#E5ECF9;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:15px;
+    padding-bottom:1px;
+    margin-top:5px;
+    margin-bottom:10px;
   }
 
   div.replier-info img{

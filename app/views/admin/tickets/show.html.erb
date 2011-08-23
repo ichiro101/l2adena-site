@@ -8,7 +8,7 @@
   By <strong><%= @ticket.user.username %></strong><br />
   <span class="quiet">Posted on <%= @ticket.created_at %></span><br />
 </div>
-<div class="ticket-content box">
+<div class="ticket-content">
   <%= raw RDiscount.new(@ticket.content).to_html %>
 </div>
 
@@ -19,7 +19,7 @@
     By <strong><%= ticket_reply.user.username %></strong><br />
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
   </div>
-  <div class="box">
+  <div class="reply-content">
     <%= raw RDiscount.new(ticket_reply.content).to_html %>
   </div>
   <% unless ticket_reply.ticket_status_change.nil? %>
@@ -68,9 +68,14 @@
 </script>
 
 <style type="text/css">
-  div.box p {
-    margin-bottom:0;
-    padding-bottom:0;
+  div.ticket-content, div.reply-content {
+    background-color:#E5ECF9;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:15px;
+    padding-bottom:1px;
+    margin-top:5px;
+    margin-bottom:10px;
   }
 
   div.user-info img {

@@ -35,4 +35,8 @@ class TicketsController < ApplicationController
     @ticket_reply = TicketReply.new
   end
 
+  def preview
+    render :text => RDiscount.new(params[:data]).to_html
+  end
+
 end

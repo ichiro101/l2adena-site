@@ -35,7 +35,12 @@ L2adena::Application.routes.draw do
 
     root :to => 'home#index'
   end
-  resources :tickets
+  resources :tickets do
+    collection do
+      post 'preview'
+    end
+  end
+
   resources :ticket_replies
   resources :services, :only => [:index, :create, :destroy] do
     collection do

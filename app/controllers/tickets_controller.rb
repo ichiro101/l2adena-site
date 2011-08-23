@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:preview]
 
   def index
     @title = "L2Adena - Support"

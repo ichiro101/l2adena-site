@@ -9,7 +9,7 @@
   <span class="quiet">Posted on <%= @ticket.created_at %></span><br />
 </div>
 <div class="ticket-content box">
-  <%= @ticket.content %>
+  <%= raw RDiscount.new(@ticket.content).to_html %>
 </div>
 
 <hr />
@@ -20,7 +20,7 @@
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
   </div>
   <div class="box">
-    <%= ticket_reply.content %>
+    <%= raw RDiscount.new(ticket_reply.content).to_html %>
   </div>
   <% unless ticket_reply.ticket_status_change.nil? %>
     <div class="status-change box">
@@ -47,6 +47,12 @@
   <%= f.submit %>
 <% end %>
 
+<%= stylesheet_link_tag '/markitup/skins/markitup/style' %>
+<%= stylesheet_link_tag '/markitup/sets/markdown/style' %>
+
+<%= javascript_include_tag '/markitup/jquery.markitup.js' %>
+<%= javascript_include_tag '/markitup/sets/markdown/set.js' %>
+
 <script type="text/javascript">
   $(document).ready(function() {
       $("#status_changed").change(function() {
@@ -56,10 +62,17 @@
           $("#status_change_select").css("display", "none");
         }
      });
+
+    $('#ticket_reply_content').markItUp(mySettings);
   });
 </script>
 
 <style type="text/css">
+  div.box p {
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+
   div.user-info img {
     width:32px;
     float:left;

@@ -1,4 +1,5 @@
 class Admin::TicketsController < Admin::AdminController
+  require 'rdiscount'
 
   def index
     @tickets = Ticket.paginate(:page => params[:page]).order("created_at desc")

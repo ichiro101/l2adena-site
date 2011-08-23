@@ -1,5 +1,16 @@
 class Admin::UserController < Admin::AdminController
 
+  def get_profile
+    if @user.profile.nil?
+      @profile = Profile.new
+    else
+      @profile = @user.profile
+    end
+  end
+
+  def update_profile
+  end
+
   def index
     @users = User.paginate(:page => params[:page])
   end

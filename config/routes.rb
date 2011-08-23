@@ -49,6 +49,11 @@ L2adena::Application.routes.draw do
   end
   
   resources :users, :only => [:index] do
+    member do
+      get 'edit_profile'
+      post 'update_profile'
+    end
+
     collection do
       get 'dismiss_newbie_bar'
       get 'undismiss_newbie_bar'

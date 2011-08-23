@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :services
   has_many :user_game_accounts
 
+  has_one :profile
+
   # Data validation
   validates_presence_of :password, :on => :create
   validates_presence_of :email
@@ -92,7 +94,9 @@ class User < ActiveRecord::Base
   def self.authenticate(username, password)
     users = User.where(:username => username)
     if users.size == 0
-      return nil
+      # Check if what user entered is a valid email address
+      users = User.where(:email => username)
+      return nil if users.size == 0
     end
 
     user = users.first

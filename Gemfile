@@ -18,9 +18,11 @@ gem 'bcrypt-ruby'
 gem 'omniauth' #, :git => 'git://github.com/intridea/omniauth.git'
 gem 'oa-openid', :require => 'omniauth/openid'
 
+# Front end stuff
 gem 'gravatar-ultimate'
 gem 'will_paginate', '~> 3.0'
 gem 'acts_as_list'
+gem 'rdiscount'
 
 gem 'jquery-rails', '>= 1.0.12'
 

@@ -4,7 +4,7 @@
 
 <h2><%= @ticket.name %></h2>
 <div id="ticket-content" class="box">
-  <%= @ticket.content %>
+  <%= raw RDiscount.new(@ticket.content).to_html %>
 </div>
 
 <% @ticket_replies.each do |ticket_reply| %>
@@ -14,7 +14,7 @@
     <span class="quiet">Posted on <%= ticket_reply.created_at %></span><br />
   </div>
   <div class="reply-content box">
-    <%= ticket_reply.content %>
+    <%= raw RDiscount.new(ticket_reply.content).to_html %>
   </div>
   <% if !ticket_reply.ticket_status_change.nil? %>
     <div class="status-change">
@@ -31,8 +31,18 @@
   <%= f.text_area :content %><br />
   <%= f.submit %>
 <% end %>
+<%= stylesheet_link_tag '/markitup/skins/markitup/style' %>
+<%= stylesheet_link_tag '/markitup/sets/markdown/style' %>
+
+<%= javascript_include_tag '/markitup/jquery.markitup.js' %>
+<%= javascript_include_tag '/markitup/sets/markdown/set.js' %>
 
 <style type="text/css">
+  div.box p {
+    margin:0;
+    padding:0;
+  }
+
   div.replier-info img{
     width:32px;
     float:left;
@@ -44,4 +54,17 @@
     margin-bottom:10px;
     background-color:#ddd;
   }
+
+  div.markItUp {
+    width:550px; 
+  }
+
+  div.markItUp textarea {
+    width:490px;
+  }
 </style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#ticket_reply_content').markItUp(mySettings);
+  });
+</script>

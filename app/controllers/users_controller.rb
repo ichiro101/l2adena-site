@@ -1,6 +1,18 @@
 class UsersController < ApplicationController
 
   before_filter :get_requested_url, :only => [:dismiss_newbie_bar, :undismiss_newbie_bar]
+  before_filter :authenticate_user!, :except => [:dismiss_newbie_bar, :undismiss_newbie_bar]
+
+  def get_profile
+    if current_user.profile.nil?
+      @profile = Profile.new
+    else
+      @profile = current_user.profile
+    end
+  end
+
+  def update_profile
+  end
 
   def dismiss_newbie_bar
     session[:hide_newbie_bar] = true

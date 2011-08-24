@@ -17,7 +17,7 @@ module ApplicationHelper
     login_status.name = "Login Server"
 
     begin
-      timeout(0.2) do
+      timeout(0.5) do
         login_server_socket = TCPSocket.open(login_host, login_port)
         login_status.status = 1
       end

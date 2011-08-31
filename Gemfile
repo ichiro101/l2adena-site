@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,7 +14,7 @@ group :development, :test do
   gem 'guard-rspec'
 end
 
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth' #, :git => 'git://github.com/intridea/omniauth.git'
 gem 'oa-openid', :require => 'omniauth/openid'
 
